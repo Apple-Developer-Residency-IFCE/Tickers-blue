@@ -1,9 +1,3 @@
-//
-//  TickersApp.swift
-//  Tickers
-//
-//  Created by userext on 23/05/23.
-//
 
 import SwiftUI
 
