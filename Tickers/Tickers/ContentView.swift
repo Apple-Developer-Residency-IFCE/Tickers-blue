@@ -13,7 +13,8 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("Texto em negrito")
+                .font(Font.nunitoFont(font: .bold, size: .xxxl))
         }
         .padding()
     }
@@ -24,3 +25,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+//(Font.nunitoFont(font: .bold, size: .extraLarge))
