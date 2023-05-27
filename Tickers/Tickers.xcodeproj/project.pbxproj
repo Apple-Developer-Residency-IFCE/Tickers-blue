@@ -16,7 +16,7 @@
 		642698122A1D797800A7C788 /* TickersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642698112A1D797800A7C788 /* TickersUITestsLaunchTests.swift */; };
 		6492E9B22A201FB100F608BB /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6492E9B12A201FB100F608BB /* Nunito-Bold.ttf */; };
 		6492E9B42A20207400F608BB /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6492E9B32A20207400F608BB /* Nunito-Regular.ttf */; };
-		6492E9B62A202A7600F608BB /* NunitoFontSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6492E9B52A202A7600F608BB /* NunitoFontSize.swift */; };
+		6492E9B62A202A7600F608BB /* TickerFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6492E9B52A202A7600F608BB /* TickerFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		6492E9A42A200A7000F608BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6492E9B12A201FB100F608BB /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		6492E9B32A20207400F608BB /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
-		6492E9B52A202A7600F608BB /* NunitoFontSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NunitoFontSize.swift; sourceTree = "<group>"; };
+		6492E9B52A202A7600F608BB /* TickerFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 		642697E82A1D797700A7C788 = {
 			isa = PBXGroup;
 			children = (
-				6492E9B52A202A7600F608BB /* NunitoFontSize.swift */,
+				6492E9B52A202A7600F608BB /* TickerFont.swift */,
 				6492E9B02A201F5400F608BB /* fonts */,
 				642697F32A1D797700A7C788 /* Tickers */,
 				642698042A1D797800A7C788 /* TickersTests */,
@@ -278,7 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6492E9B62A202A7600F608BB /* NunitoFontSize.swift in Sources */,
+				6492E9B62A202A7600F608BB /* TickerFont.swift in Sources */,
 				642697F72A1D797700A7C788 /* ContentView.swift in Sources */,
 				642697F52A1D797700A7C788 /* TickersApp.swift in Sources */,
 			);

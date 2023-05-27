@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum NunitoFontSize: CGFloat {
+enum TickerFont: CGFloat {
     case small = 10.0
     case medium = 12.0
     case regular = 14.0
@@ -16,7 +16,8 @@ enum NunitoFont: String {
 }
 
 extension Font {
-    static func nunitoFont(font: NunitoFont, size: NunitoFontSize) -> Font {
+    static func tickerFont(font: NunitoFont, size: TickerFont) -> Font {
         return Font.custom(font.rawValue, size: size.rawValue)
     }
 }
+
