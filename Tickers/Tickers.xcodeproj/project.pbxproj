@@ -14,6 +14,7 @@
 		642698062A1D797800A7C788 /* TickersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642698052A1D797800A7C788 /* TickersTests.swift */; };
 		642698102A1D797800A7C788 /* TickersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6426980F2A1D797800A7C788 /* TickersUITests.swift */; };
 		642698122A1D797800A7C788 /* TickersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642698112A1D797800A7C788 /* TickersUITestsLaunchTests.swift */; };
+		64B01BC82A256FEC00853314 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B01BC72A256FEC00853314 /* TextField.swift */; };
 		64F797372A202F190032FC94 /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F797362A202F190032FC94 /* RadioButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		6426980B2A1D797800A7C788 /* TickersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TickersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6426980F2A1D797800A7C788 /* TickersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersUITests.swift; sourceTree = "<group>"; };
 		642698112A1D797800A7C788 /* TickersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		64B01BC72A256FEC00853314 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		64F797362A202F190032FC94 /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,8 +78,6 @@
 		642697E82A1D797700A7C788 = {
 			isa = PBXGroup;
 			children = (
-				64F797362A202F190032FC94 /* RadioButtonView.swift */,
-				642697F62A1D797700A7C788 /* ContentView.swift */,
 				642697F32A1D797700A7C788 /* Tickers */,
 				642698042A1D797800A7C788 /* TickersTests */,
 				6426980E2A1D797800A7C788 /* TickersUITests */,
@@ -98,8 +98,11 @@
 		642697F32A1D797700A7C788 /* Tickers */ = {
 			isa = PBXGroup;
 			children = (
+				64F797362A202F190032FC94 /* RadioButtonView.swift */,
+				642697F62A1D797700A7C788 /* ContentView.swift */,
 				642697F42A1D797700A7C788 /* TickersApp.swift */,
 				642697F82A1D797800A7C788 /* Assets.xcassets */,
+				64B01BC72A256FEC00853314 /* TextField.swift */,
 				642697FA2A1D797800A7C788 /* Preview Content */,
 			);
 			path = Tickers;
@@ -263,6 +266,7 @@
 				642697F72A1D797700A7C788 /* ContentView.swift in Sources */,
 				642697F52A1D797700A7C788 /* TickersApp.swift in Sources */,
 				64F797372A202F190032FC94 /* RadioButtonView.swift in Sources */,
+				64B01BC82A256FEC00853314 /* TextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
