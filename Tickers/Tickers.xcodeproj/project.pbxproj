@@ -14,6 +14,8 @@
 		642698062A1D797800A7C788 /* TickersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642698052A1D797800A7C788 /* TickersTests.swift */; };
 		642698102A1D797800A7C788 /* TickersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6426980F2A1D797800A7C788 /* TickersUITests.swift */; };
 		642698122A1D797800A7C788 /* TickersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642698112A1D797800A7C788 /* TickersUITestsLaunchTests.swift */; };
+		64D0A7922A27F5D70074EF28 /* StopWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0A7902A27F5D70074EF28 /* StopWatchView.swift */; };
+		64D0A7932A27F5D70074EF28 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0A7912A27F5D70074EF28 /* CircularProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		6426980B2A1D797800A7C788 /* TickersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TickersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6426980F2A1D797800A7C788 /* TickersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersUITests.swift; sourceTree = "<group>"; };
 		642698112A1D797800A7C788 /* TickersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		64D0A7902A27F5D70074EF28 /* StopWatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatchView.swift; sourceTree = "<group>"; };
+		64D0A7912A27F5D70074EF28 /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 		642697F32A1D797700A7C788 /* Tickers */ = {
 			isa = PBXGroup;
 			children = (
+				64D0A7942A27F5F60074EF28 /* UIComponents */,
 				642697F42A1D797700A7C788 /* TickersApp.swift */,
 				642697F62A1D797700A7C788 /* ContentView.swift */,
 				642697F82A1D797800A7C788 /* Assets.xcassets */,
@@ -125,6 +130,23 @@
 				642698112A1D797800A7C788 /* TickersUITestsLaunchTests.swift */,
 			);
 			path = TickersUITests;
+			sourceTree = "<group>";
+		};
+		64D0A7942A27F5F60074EF28 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				64D0A7952A27F6150074EF28 /* Stopwatch */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		64D0A7952A27F6150074EF28 /* Stopwatch */ = {
+			isa = PBXGroup;
+			children = (
+				64D0A7912A27F5D70074EF28 /* CircularProgressView.swift */,
+				64D0A7902A27F5D70074EF28 /* StopWatchView.swift */,
+			);
+			path = Stopwatch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +279,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64D0A7922A27F5D70074EF28 /* StopWatchView.swift in Sources */,
 				642697F72A1D797700A7C788 /* ContentView.swift in Sources */,
+				64D0A7932A27F5D70074EF28 /* CircularProgressView.swift in Sources */,
 				642697F52A1D797700A7C788 /* TickersApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
