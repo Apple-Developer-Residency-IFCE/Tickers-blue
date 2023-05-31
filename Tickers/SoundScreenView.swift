@@ -10,9 +10,9 @@ import SwiftUI
 
 struct SoundScreenView: View {
     @State private var showingSounds = false
-    @State var ativado: Bool
+    @State var ativado: String?
     let options = ["Chuva", "Tempestade", "Água Corrente", "Lo-fi"]
-    
+        
     var body: some View {
         Button("Sons") {
             showingSounds.toggle()
@@ -25,12 +25,15 @@ struct SoundScreenView: View {
                 }
                 Divider()
                 ForEach(options, id: \.self) { option in
-                    RadioButtonView(text: option, isTapped: $ativado)
+                    RadioButtonView(text: option, isTapped: option == ativado)
+                        .onTapGesture {
+                            ativado = option
+                        }
                 }
             }
-            .presentationDetents([.medium, .large])
+            .presentationDetents([.height(250)])
             .padding()
-
+            
         }
     }
 }
@@ -38,6 +41,6 @@ struct SoundScreenView: View {
 
 struct SoundScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        SoundScreenView(ativado: false)
+        SoundScreenView(ativado: "sss")
     }
 }
