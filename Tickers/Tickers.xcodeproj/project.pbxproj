@@ -14,6 +14,7 @@
 		642698062A1D797800A7C788 /* TickersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642698052A1D797800A7C788 /* TickersTests.swift */; };
 		642698102A1D797800A7C788 /* TickersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6426980F2A1D797800A7C788 /* TickersUITests.swift */; };
 		642698122A1D797800A7C788 /* TickersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642698112A1D797800A7C788 /* TickersUITestsLaunchTests.swift */; };
+		6427D6E62A2560C700F66288 /* SoundScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6427D6E52A2560C700F66288 /* SoundScreenView.swift */; };
 		64F797372A202F190032FC94 /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F797362A202F190032FC94 /* RadioButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		6426980B2A1D797800A7C788 /* TickersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TickersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6426980F2A1D797800A7C788 /* TickersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersUITests.swift; sourceTree = "<group>"; };
 		642698112A1D797800A7C788 /* TickersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6427D6E52A2560C700F66288 /* SoundScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundScreenView.swift; sourceTree = "<group>"; };
 		64F797362A202F190032FC94 /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +78,7 @@
 		642697E82A1D797700A7C788 = {
 			isa = PBXGroup;
 			children = (
+				6427D6E52A2560C700F66288 /* SoundScreenView.swift */,
 				64F797362A202F190032FC94 /* RadioButtonView.swift */,
 				642697F62A1D797700A7C788 /* ContentView.swift */,
 				642697F32A1D797700A7C788 /* Tickers */,
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6427D6E62A2560C700F66288 /* SoundScreenView.swift in Sources */,
 				642697F72A1D797700A7C788 /* ContentView.swift in Sources */,
 				642697F52A1D797700A7C788 /* TickersApp.swift in Sources */,
 				64F797372A202F190032FC94 /* RadioButtonView.swift in Sources */,

@@ -9,27 +9,42 @@ import SwiftUI
 
 
 struct RadioButtonView: View {
-    var text : String
+    var text: String
     @Binding var isTapped : Bool
     
+    func imagemBotao() -> String {
+        return isTapped ? "Checkbox" : "Square"
+    }
+    
+    
     var body: some View {
-        HStack {
-            Image("Square")
-                .overlay {
-                    isTapped ? Image("Checkbox") : Image("Square")
-                }
-                .onTapGesture {
-                    isTapped.toggle()
-                }
-            Text(text)
+        let imagem = imagemBotao()
+        
+        Button {
+            isTapped.toggle()
+        } label: {
+            HStack{
+                Label(text, image: imagem)
+            }
+            
+            //        HStack {
+            //            Image("Square")
+            //                .overlay {
+            //                    isTapped ? Image("Checkbox") : Image("Square")
+            //                }
+            //                .onTapGesture {
+            //                    isTapped.toggle()
+            //                }
+            //            Text(text)
+            //        }
+            
         }
         
     }
     
-}
-
-struct RadioButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        RadioButtonView(text: "cuscuz", isTapped: .constant(false))
+    struct RadioButtonView_Previews: PreviewProvider {
+        static var previews: some View {
+            RadioButtonView(text: "HELP", isTapped: .constant(false))
+        }
     }
 }
