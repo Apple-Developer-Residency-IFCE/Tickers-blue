@@ -11,7 +11,7 @@ struct EggCardView: View {
     var body: some View {
         HStack {
             VStack(alignment: .center){
-                Image("be")
+                Image("BlueEgg")
 //                    .aspectRatio(contentMode: .fit)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
