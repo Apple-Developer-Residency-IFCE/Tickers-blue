@@ -13,15 +13,18 @@ struct LvlProgressBarView: View {
     var body: some View {
         HStack {
             Image(systemName: "globe")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 12)
                 .foregroundColor(.blue)
-                .padding(.trailing, 5)
             ProgressView(value: Double(actualProgress), total: Double(maxProgress))
-                .frame(width: 130, height: 12.0)
+                .frame(width: 68, height: 8.0)
                 .scaleEffect(x:1, y: 2.5, anchor: .center)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
 
             Text("\(actualProgress)/\(maxProgress)").padding(.trailing, 0)
-                .padding(.leading, 0).opacity(0.3)
+                .padding(.leading, 0).opacity(0.4)
+                .font(.footnote)
                 .bold()
         }
     }

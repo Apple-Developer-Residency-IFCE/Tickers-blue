@@ -18,6 +18,9 @@
 		6488087A2A26CC490031D2BA /* CardEggView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648808792A26CC490031D2BA /* CardEggView.swift */; };
 		6488087C2A26CD280031D2BA /* CardTickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488087B2A26CD280031D2BA /* CardTickersView.swift */; };
 		6488087E2A26CD630031D2BA /* LvlProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488087D2A26CD630031D2BA /* LvlProgressBarView.swift */; };
+		64D0A7982A27FA860074EF28 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0A7972A27FA860074EF28 /* CardView.swift */; };
+		64D0A79A2A27FEA40074EF28 /* EggCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0A7992A27FEA40074EF28 /* EggCardView.swift */; };
+		64D0A79C2A27FEB10074EF28 /* PetcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0A79B2A27FEB10074EF28 /* PetcardView.swift */; };
 		64F797372A202F190032FC94 /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F797362A202F190032FC94 /* RadioButtonView.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,9 @@
 		648808792A26CC490031D2BA /* CardEggView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEggView.swift; sourceTree = "<group>"; };
 		6488087B2A26CD280031D2BA /* CardTickersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTickersView.swift; sourceTree = "<group>"; };
 		6488087D2A26CD630031D2BA /* LvlProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LvlProgressBarView.swift; sourceTree = "<group>"; };
+		64D0A7972A27FA860074EF28 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		64D0A7992A27FEA40074EF28 /* EggCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCardView.swift; sourceTree = "<group>"; };
+		64D0A79B2A27FEB10074EF28 /* PetcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetcardView.swift; sourceTree = "<group>"; };
 		64F797362A202F190032FC94 /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +160,9 @@
 				648808762A26AA600031D2BA /* CardPetView.swift */,
 				648808792A26CC490031D2BA /* CardEggView.swift */,
 				6488087D2A26CD630031D2BA /* LvlProgressBarView.swift */,
+				64D0A7972A27FA860074EF28 /* CardView.swift */,
+				64D0A7992A27FEA40074EF28 /* EggCardView.swift */,
+				64D0A79B2A27FEB10074EF28 /* PetcardView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -288,12 +297,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64D0A79C2A27FEB10074EF28 /* PetcardView.swift in Sources */,
 				642697F72A1D797700A7C788 /* ContentView.swift in Sources */,
 				6488087E2A26CD630031D2BA /* LvlProgressBarView.swift in Sources */,
 				6488087A2A26CC490031D2BA /* CardEggView.swift in Sources */,
 				6488087C2A26CD280031D2BA /* CardTickersView.swift in Sources */,
 				642697F52A1D797700A7C788 /* TickersApp.swift in Sources */,
 				648808772A26AA600031D2BA /* CardPetView.swift in Sources */,
+				64D0A79A2A27FEA40074EF28 /* EggCardView.swift in Sources */,
+				64D0A7982A27FA860074EF28 /* CardView.swift in Sources */,
 				64F797372A202F190032FC94 /* RadioButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
