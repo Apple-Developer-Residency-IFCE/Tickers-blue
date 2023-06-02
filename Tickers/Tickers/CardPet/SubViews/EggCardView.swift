@@ -8,49 +8,41 @@
 import SwiftUI
 
 struct EggCardView: View {
+    var pet = "blueEgg"
+    
     var body: some View {
         HStack {
-            VStack(alignment: .center){
-                Image("BlueEgg")
-//                    .aspectRatio(contentMode: .fit)
+            VStack(alignment: .center, spacing: 0){
+                Image(pet)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 102)
-                    .padding(.top, 29)
-        
+                    .frame(maxHeight: 102)
+                    .padding(.top, 32)
+
                 Image("Locker")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 28)
-                    .padding(.leading, 100)
-                    .padding(.bottom, 20)
+                    .frame(maxHeight: 28)
+                    .padding(.leading, 120)
+                    .padding(.trailing, 16)
+                    .padding(.bottom, 13)
 
-            }.background {
-                Color
-                    .blue
-                    .opacity(0.1)
-                    .cornerRadius(10)
-                    .shadow(radius: 5)
-                    .frame(width: 160, height: 176)
-            }.padding(25)
-//            PetcardView()
-            PetCardView()
-                .background {
-                Color
-                    .blue
-                    .opacity(0.1)
-                    .cornerRadius(10)
-                    .shadow(radius: 5)
-                    .frame(width: 160, height: 176)
-                }.padding(25)
+            }
         }
-        
-        
     }
 }
 
 struct EggCardView_Previews: PreviewProvider {
     static var previews: some View {
         EggCardView()
+            .background {
+                Color
+                    .blue
+                    .opacity(0.1)
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
+                    .frame(width: 160, height: 176)
+                
+            }
     }
 }

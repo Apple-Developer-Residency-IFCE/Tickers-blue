@@ -6,37 +6,50 @@
 //
 import SwiftUI
 
-struct Card: View {
+
+struct PetCardView: View {
+    var maxProgress = 40
+    var actualProgress = 10
+    @State var title = "Haddinha"
+    var pet = "BabyCat"
+    var level = "Lvl 1"
+    
+    init(_ maxProgress: Int = 40, _ actualProgress: Int = 10, _ title: String = "Haddinha", _ pet: String = "BabyCat", _ level: String = "Lvl 1") {
+        self.maxProgress = maxProgress
+        self.actualProgress = actualProgress
+        self.title = title
+        self.pet = pet
+        self.level = level
+    }
     
     var body: some View {
         VStack(spacing: 0) {
             HStack {
-                Text("Haddinhas")
+                Text(title)
                     .foregroundColor(Color.blue)
                     .bold()
                     .font(.callout)
-                Image(systemName: "heart.fill")
-                    .foregroundColor(.blue.opacity(0.3))
+                Image("Pen")
+                    .resizable()
+                    .frame(maxWidth: 12,maxHeight: 12)
+                    .onTapGesture {
+                        //Mudar o titulo
+                    }
             }
-            Image("BabyCat")
+            Image(pet)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(height: 90)
+                .frame(maxHeight: 90)
                 .padding(.leading, 20)
-            Text("Lvl 1")
+            Text(level)
                 .foregroundColor(.blue)
                 .font(.callout)
                 .bold()
                 .padding(.top, 8)
-            LvlProgressBarView(maxProgress: 40, actualProgress: 10)
+            
+            LvlProgressBarView(maxProgress, actualProgress)
                 .padding(.top, 4)
         }
-    }
-}
-
-struct PetCardView: View {
-    var body: some View {
-        Card()
     }
 }
 
