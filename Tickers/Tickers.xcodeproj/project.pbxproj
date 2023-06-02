@@ -13,6 +13,7 @@
 		642698062A1D797800A7C788 /* TickersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642698052A1D797800A7C788 /* TickersTests.swift */; };
 		642698102A1D797800A7C788 /* TickersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6426980F2A1D797800A7C788 /* TickersUITests.swift */; };
 		642698122A1D797800A7C788 /* TickersUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642698112A1D797800A7C788 /* TickersUITestsLaunchTests.swift */; };
+		6427D6E62A2560C700F66288 /* SoundScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6427D6E52A2560C700F66288 /* SoundScreenView.swift */; };
 		646E1B852A2808E6004B4583 /* ButtonUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646E1B842A2808E6004B4583 /* ButtonUp.swift */; };
 		646E1B872A280A64004B4583 /* ButtonReturn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646E1B862A280A64004B4583 /* ButtonReturn.swift */; };
 		6492E9B22A201FB100F608BB /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6492E9B12A201FB100F608BB /* Nunito-Bold.ttf */; };
@@ -48,6 +49,7 @@
 		6426980B2A1D797800A7C788 /* TickersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TickersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6426980F2A1D797800A7C788 /* TickersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersUITests.swift; sourceTree = "<group>"; };
 		642698112A1D797800A7C788 /* TickersUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6427D6E52A2560C700F66288 /* SoundScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundScreenView.swift; sourceTree = "<group>"; };
 		646E1B842A2808E6004B4583 /* ButtonUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonUp.swift; sourceTree = "<group>"; };
 		646E1B862A280A64004B4583 /* ButtonReturn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonReturn.swift; sourceTree = "<group>"; };
 		6492E9A42A200A7000F608BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		642697E82A1D797700A7C788 = {
 			isa = PBXGroup;
 			children = (
+				6427D6E52A2560C700F66288 /* SoundScreenView.swift */,
 				6492E9B52A202A7600F608BB /* TickerFont.swift */,
 				6492E9B02A201F5400F608BB /* fonts */,
 				64F797362A202F190032FC94 /* RadioButtonView.swift */,
@@ -286,6 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6427D6E62A2560C700F66288 /* SoundScreenView.swift in Sources */,
 				6492E9B62A202A7600F608BB /* TickerFont.swift in Sources */,
 				642697F72A1D797700A7C788 /* ContentView.swift in Sources */,
 				642697F52A1D797700A7C788 /* TickersApp.swift in Sources */,
