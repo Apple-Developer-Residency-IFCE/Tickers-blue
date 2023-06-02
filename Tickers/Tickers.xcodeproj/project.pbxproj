@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6418901D2A294E1000D512DA /* MissionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6418901C2A294E1000D512DA /* MissionCellView.swift */; };
 		642697F52A1D797700A7C788 /* TickersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642697F42A1D797700A7C788 /* TickersApp.swift */; };
 		642697F72A1D797700A7C788 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642697F62A1D797700A7C788 /* ContentView.swift */; };
 		642697F92A1D797800A7C788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642697F82A1D797800A7C788 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6418901C2A294E1000D512DA /* MissionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCellView.swift; sourceTree = "<group>"; };
 		642697F12A1D797700A7C788 /* Tickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tickers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		642697F42A1D797700A7C788 /* TickersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersApp.swift; sourceTree = "<group>"; };
 		642697F62A1D797700A7C788 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		642697E82A1D797700A7C788 = {
 			isa = PBXGroup;
 			children = (
+				6418901C2A294E1000D512DA /* MissionCellView.swift */,
 				6492E9B52A202A7600F608BB /* TickerFont.swift */,
 				6492E9B02A201F5400F608BB /* fonts */,
 				64F797362A202F190032FC94 /* RadioButtonView.swift */,
@@ -283,6 +286,7 @@
 			files = (
 				6492E9B62A202A7600F608BB /* TickerFont.swift in Sources */,
 				642697F72A1D797700A7C788 /* ContentView.swift in Sources */,
+				6418901D2A294E1000D512DA /* MissionCellView.swift in Sources */,
 				642697F52A1D797700A7C788 /* TickersApp.swift in Sources */,
 				64F797372A202F190032FC94 /* RadioButtonView.swift in Sources */,
 			);
