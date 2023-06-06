@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		345E236E2A2FE15A00AEF1CB /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E236C2A2FE15A00AEF1CB /* CircularProgressView.swift */; };
+		345E236F2A2FE15A00AEF1CB /* StopWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E236D2A2FE15A00AEF1CB /* StopWatchView.swift */; };
+		345E23732A2FE65D00AEF1CB /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E23722A2FE65D00AEF1CB /* RadioButtonView.swift */; };
 		642697F52A1D797700A7C788 /* TickersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642697F42A1D797700A7C788 /* TickersApp.swift */; };
 		642697F92A1D797800A7C788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642697F82A1D797800A7C788 /* Assets.xcassets */; };
 		642697FC2A1D797800A7C788 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642697FB2A1D797800A7C788 /* Preview Assets.xcassets */; };
@@ -44,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		345E236C2A2FE15A00AEF1CB /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		345E236D2A2FE15A00AEF1CB /* StopWatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatchView.swift; sourceTree = "<group>"; };
+		345E23722A2FE65D00AEF1CB /* RadioButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadioButtonView.swift; path = Tickers/RadioButtonView.swift; sourceTree = "<group>"; };
 		642697F12A1D797700A7C788 /* Tickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tickers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		642697F42A1D797700A7C788 /* TickersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersApp.swift; sourceTree = "<group>"; };
 		642697F82A1D797800A7C788 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				6427D6E52A2560C700F66288 /* SoundScreenView.swift */,
+				345E23722A2FE65D00AEF1CB /* RadioButtonView.swift */,
 				6492E9B52A202A7600F608BB /* TickerFont.swift */,
 				642E72952A2A9CF7008A6F21 /* RadioButtonView.swift */,
 				6492E9B02A201F5400F608BB /* fonts */,
@@ -120,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				648808752A26AA410031D2BA /* CardPet */,
+				64D0A7942A27F5F60074EF28 /* UIComponents */,
 				646E1B862A280A64004B4583 /* ButtonReturn.swift */,
 				646E1B842A2808E6004B4583 /* ButtonUp.swift */,
 				6492E9A42A200A7000F608BB /* Info.plist */,
@@ -181,6 +189,23 @@
 				6492E9B32A20207400F608BB /* Nunito-Regular.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		64D0A7942A27F5F60074EF28 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				64D0A7952A27F6150074EF28 /* Stopwatch */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		64D0A7952A27F6150074EF28 /* Stopwatch */ = {
+			isa = PBXGroup;
+			children = (
+				345E236C2A2FE15A00AEF1CB /* CircularProgressView.swift */,
+				345E236D2A2FE15A00AEF1CB /* StopWatchView.swift */,
+			);
+			path = Stopwatch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +349,13 @@
 				64D0A7982A27FA860074EF28 /* CardView.swift in Sources */,
 				646E1B872A280A64004B4583 /* ButtonReturn.swift in Sources */,
 				642E72962A2A9CF7008A6F21 /* RadioButtonView.swift in Sources */,
+				6427D6E62A2560C700F66288 /* SoundScreenView.swift in Sources */,
+				6492E9B62A202A7600F608BB /* TickerFont.swift in Sources */,
+				642697F52A1D797700A7C788 /* TickersApp.swift in Sources */,
+				345E23732A2FE65D00AEF1CB /* RadioButtonView.swift in Sources */,
+				345E236E2A2FE15A00AEF1CB /* CircularProgressView.swift in Sources */,
+				646E1B872A280A64004B4583 /* ButtonReturn.swift in Sources */,
+				345E236F2A2FE15A00AEF1CB /* StopWatchView.swift in Sources */,
 				646E1B852A2808E6004B4583 /* ButtonUp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
