@@ -28,7 +28,6 @@ struct LvlProgressBarView: View {
             Text("\(actualProgress)/\(maxProgress)").padding(.trailing, 0)
                 .padding(.leading, 0).opacity(0.4)
                 .font(.footnote)
-                .bold()
         }.frame(maxWidth: 140, maxHeight: 20)
     }
     
