@@ -40,7 +40,7 @@ struct SoundScreenView: View {
                         }
                 }
             }
-            .presentationDetents([.height(250)])
+//            .presentationDetents([.height(250)])
             .padding()
             .interactiveDismissDisabled()
         }
