@@ -35,7 +35,6 @@ struct MissionCellView: View {
                         .padding(.trailing, 0)
                         .padding(.leading, 0).opacity(0.4)
                         .font(Font.tickerFont(font: .bold, size: .medium))
-                        .bold()
                 }
             }
         }.padding()
