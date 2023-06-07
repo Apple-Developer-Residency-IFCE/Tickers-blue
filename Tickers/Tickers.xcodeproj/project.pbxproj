@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6418901D2A294E1000D512DA /* MissionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6418901C2A294E1000D512DA /* MissionCellView.swift */; };
 		345E236E2A2FE15A00AEF1CB /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E236C2A2FE15A00AEF1CB /* CircularProgressView.swift */; };
 		345E236F2A2FE15A00AEF1CB /* StopWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E236D2A2FE15A00AEF1CB /* StopWatchView.swift */; };
 		345E23732A2FE65D00AEF1CB /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E23722A2FE65D00AEF1CB /* RadioButtonView.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6418901C2A294E1000D512DA /* MissionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCellView.swift; sourceTree = "<group>"; };
 		345E236C2A2FE15A00AEF1CB /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		345E236D2A2FE15A00AEF1CB /* StopWatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatchView.swift; sourceTree = "<group>"; };
 		345E23722A2FE65D00AEF1CB /* RadioButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RadioButtonView.swift; path = Tickers/RadioButtonView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		642697E82A1D797700A7C788 = {
 			isa = PBXGroup;
 			children = (
+				6418901C2A294E1000D512DA /* MissionCellView.swift */,
 				6427D6E52A2560C700F66288 /* SoundScreenView.swift */,
 				345E23722A2FE65D00AEF1CB /* RadioButtonView.swift */,
 				6492E9B52A202A7600F608BB /* TickerFont.swift */,
@@ -351,6 +354,8 @@
 				642E72962A2A9CF7008A6F21 /* RadioButtonView.swift in Sources */,
 				6427D6E62A2560C700F66288 /* SoundScreenView.swift in Sources */,
 				6492E9B62A202A7600F608BB /* TickerFont.swift in Sources */,
+				642697F72A1D797700A7C788 /* ContentView.swift in Sources */,
+				6418901D2A294E1000D512DA /* MissionCellView.swift in Sources */,
 				642697F52A1D797700A7C788 /* TickersApp.swift in Sources */,
 				345E23732A2FE65D00AEF1CB /* RadioButtonView.swift in Sources */,
 				345E236E2A2FE15A00AEF1CB /* CircularProgressView.swift in Sources */,
