@@ -19,31 +19,39 @@ struct SoundScreenView: View {
             showingSounds.toggle()
         }
         .sheet(isPresented: $showingSounds) {
-            VStack(alignment: .leading){
-                HStack(spacing: 0){
-                    Image("ButtonSons")
-                        .padding(.trailing, 12)
-                    Text("Sons")
-                        .font(Font.tickerFont(font: .bold, size: .xxxl))
-                        .foregroundColor(.blue)
-                    Spacer()
-                    Image("ButtonExitPopups")
-                        .onTapGesture {
-                            showingSounds = false
-                        }
-                }
-                Divider()
-                ForEach(options, id: \.self) { option in
-                    RadioButtonView(text: option, isTapped: option == selectedOption)
-                        .onTapGesture {
-                            selectedOption = option
-                        }
-                }
+            if #available(iOS 16.0, *) {
+                bottomSheetContent
+                    .presentationDetents([.height(250)])
+            } else {
+                bottomSheetContent
             }
-            .presentationDetents([.height(250)])
-            .padding()
-            .interactiveDismissDisabled()
         }
+    }
+    
+    var bottomSheetContent: some View {
+        VStack(alignment: .leading){
+            HStack(spacing: 0){
+                Image("ButtonSons")
+                    .padding(.trailing, 12)
+                Text("Sons")
+                    .font(Font.tickerFont(font: .bold, size: .xxxl))
+                    .foregroundColor(.blue)
+                Spacer()
+                Image("ButtonExitPopups")
+                    .onTapGesture {
+                        showingSounds = false
+                    }
+            }
+            Divider()
+            ForEach(options, id: \.self) { option in
+                RadioButtonView(text: option, isTapped: option == selectedOption)
+                    .onTapGesture {
+                        selectedOption = option
+                    }
+            }
+        }
+        .padding()
+        .interactiveDismissDisabled()
     }
 }
 
