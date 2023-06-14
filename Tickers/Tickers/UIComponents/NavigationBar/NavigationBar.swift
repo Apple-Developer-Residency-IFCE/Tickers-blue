@@ -7,14 +7,50 @@
 
 import SwiftUI
 
-struct NavigationBar: View {
+fileprivate struct Home: View {
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            Text("Comida")
+        }.navigationHome(leadingText: "leadingText", trailingText: "trailingText")
     }
 }
 
-struct NavigationBar_Previews: PreviewProvider {
+fileprivate struct Custom: View {
+
+    var body: some View {
+        NavigationView{
+            Text("Comida")
+        }.navigationCustom(leadingText: "leadingText", trailingText: "trailingText")
+    }
+}
+
+fileprivate struct NavigationBar: View {
+    var body: some View {
+        NavigationView {
+            VStack {
+                NavigationLink {
+                    Home()
+                } label: {
+                    Text("Home")
+                }.padding()
+                
+                NavigationLink {
+                    Custom()
+                } label: {
+                    Text("Custom")
+                }.padding()
+            }
+        }
+        .navigationBarBackButtonHidden(true)
+    }
+}
+
+fileprivate struct NavigationBar_Previews: PreviewProvider {
     static var previews: some View {
         NavigationBar()
     }
 }
+
+
+
