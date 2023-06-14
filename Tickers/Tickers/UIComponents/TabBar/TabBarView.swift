@@ -20,15 +20,16 @@ struct TabBarView: View {
                     .tabItem{
                         Label("", image: "ButtonTimer")
                     }
-                Text ("Tela Config")
+                PerfilView()
                     .tabItem {
                         Label("Perfil", image: "ButtonConfig")
                     }
-                
             }
+            .padding(.horizontal, 65)
         }
     }
 }
+
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
