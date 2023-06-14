@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct TabBarView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            TabView{
+                HomeView()
+                    .tabItem{
+                        Label("Home", image: "ButtonHome")
+                    }
+                Text("Tela Cronometro")
+                    .tabItem{
+                        Label("", image: "ButtonTimer")
+                    }
+                Text ("Tela Config")
+                    .tabItem {
+                        Label("Perfil", image: "ButtonConfig")
+                    }
+                
+            }
+        }
     }
 }
 
