@@ -10,16 +10,20 @@ import SwiftUI
 struct NavigationBarTextView: View {
     var leadingText: String = ""
     var trailingText: String = ""
-
+    var centerText: String = ""
     init(_ leadingText: String, _ trailingText: String) {
         self.leadingText = leadingText
         self.trailingText = trailingText
     }
     
     var body : some View {
-        HStack {
-            Text(leadingText)
-            Text(trailingText).foregroundColor(.blue)
+        if(centerText == ""){
+            HStack {
+                Text(leadingText)
+                Text(trailingText).foregroundColor(.blue)
+            }
+        }else {
+            Text(centerText)
         }
     }
 }

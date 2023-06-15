@@ -63,10 +63,10 @@ struct NavigationBarHomeModifier: ViewModifier {
 
 extension NavigationView {
     func navigationHome(leadingText: String, trailingText: String)-> some View{
-        modifier(NavigationBarHomeModifier("Gatin", "fala cumpadi!"))
+        modifier(NavigationBarHomeModifier(leadingText, trailingText))
     }
     
     func navigationCustom(leadingText: String, trailingText: String) -> some View {
-        modifier(NavigationBarCustomModifier("traz minha comida desgrama", "Tá, levo já pera"))
+        modifier(NavigationBarCustomModifier(leadingText, trailingText))
     }
 }

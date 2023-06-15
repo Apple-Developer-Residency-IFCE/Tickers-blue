@@ -11,7 +11,7 @@ fileprivate struct Home: View {
 
     var body: some View {
         NavigationView{
-            Text("Comida")
+            Text("Home")
         }.navigationHome(leadingText: "leadingText", trailingText: "trailingText")
     }
 }
@@ -20,7 +20,7 @@ fileprivate struct Custom: View {
 
     var body: some View {
         NavigationView{
-            Text("Comida")
+            Text("Custom")
         }.navigationCustom(leadingText: "leadingText", trailingText: "trailingText")
     }
 }
@@ -46,7 +46,7 @@ fileprivate struct NavigationBar: View {
     }
 }
 
-fileprivate struct NavigationBar_Previews: PreviewProvider {
+struct NavigationBar_Previews: PreviewProvider {
     static var previews: some View {
         NavigationBar()
     }
