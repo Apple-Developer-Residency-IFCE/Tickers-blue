@@ -61,6 +61,25 @@ struct NavigationBarHomeModifier: ViewModifier {
     }
 }
 
+struct NavigationBarPreferencesModifier: ViewModifier {
+    @Environment(\.presentationMode) var presentationMode
+    var leadingText: String = ""
+    
+    init(_ leadingText: String) {
+        self.leadingText = leadingText
+    }
+    
+    func body(content: Content) -> some View {
+        content
+            .navigationBarBackButtonHidden(true)
+            .toolbar{
+                ToolbarItem(placement: .navigationBarLeading) {
+                    NavigationBarTextView(leadingText).padding(.leading, 10)
+                }
+            }
+    }
+}
+
 extension NavigationView {
     func navigationHome(leadingText: String, trailingText: String)-> some View{
         modifier(NavigationBarHomeModifier(leadingText, trailingText))
@@ -68,5 +87,9 @@ extension NavigationView {
     
     func navigationCustom(leadingText: String, trailingText: String) -> some View {
         modifier(NavigationBarCustomModifier(leadingText, trailingText))
+    }
+    
+    func navigationPreferences(leadingText: String) -> some View {
+        modifier(NavigationBarPreferencesModifier(leadingText))
     }
 }

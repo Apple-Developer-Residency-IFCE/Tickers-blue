@@ -25,6 +25,15 @@ fileprivate struct Custom: View {
     }
 }
 
+fileprivate struct Preferences: View {
+
+    var body: some View {
+        NavigationView{
+            Text("Preferences")
+        }.navigationPreferences(leadingText: "leadingText")
+    }
+}
+
 fileprivate struct NavigationBar: View {
     var body: some View {
         NavigationView {
@@ -39,6 +48,12 @@ fileprivate struct NavigationBar: View {
                     Custom()
                 } label: {
                     Text("Custom")
+                }.padding()
+                
+                NavigationLink {
+                    Preferences()
+                } label: {
+                    Text("Preferences")
                 }.padding()
             }
         }

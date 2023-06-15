@@ -8,23 +8,18 @@
 import SwiftUI
 
 struct NavigationBarTextView: View {
-    var leadingText: String = ""
-    var trailingText: String = ""
-    var centerText: String = ""
-    init(_ leadingText: String, _ trailingText: String) {
+    var leadingText: String
+    var trailingText: String
+    init(_ leadingText: String = "", _ trailingText: String = "") {
         self.leadingText = leadingText
         self.trailingText = trailingText
     }
     
     var body : some View {
-        if(centerText == ""){
-            HStack {
-                Text(leadingText)
-                Text(trailingText).foregroundColor(.blue)
-            }
-        }else {
-            Text(centerText)
-        }
+        HStack {
+            Text(leadingText)
+            Text(trailingText).foregroundColor(.blue)
+        }.font(.tickerFont(font: .bold, size: .xxl))
     }
 }
 struct NavigationBarTextView_Previews: PreviewProvider {
