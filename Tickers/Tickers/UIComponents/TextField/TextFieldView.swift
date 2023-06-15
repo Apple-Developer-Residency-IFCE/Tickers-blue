@@ -39,12 +39,13 @@ struct TextFieldView: View {
 }
 
 fileprivate struct TextFieldToPreview: View {
-    @State var text: String = ""
+    @AppStorage("text") var text: String = ""
     
     var body: some View {
         TextFieldView(title: "Seu nome",
                       subtitle: "Define como os tickers chamarão você",
                       nome: $text)
+
     }
 }
 
