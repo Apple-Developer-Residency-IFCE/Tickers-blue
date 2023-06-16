@@ -57,7 +57,7 @@ struct StopWatchView: View {
             }.frame(width: 240, height: 240)
         }
         .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
-            if isTimerRunning && timeRemaining > 0 {
+            if isTimerRunning && timeRemaining > 0 && !isBreakTimeStarted {
                 timeRemaining -= 1
             } else if timeRemaining <= 0 {
                 timerComplete()
@@ -124,6 +124,8 @@ struct StopWatchView: View {
             currentState = .breakTime
             timeRemaining = 5 * 60
             isBreakTimeStarted = true
+        } else if currentState == .work && isBreakTimeStarted {
+            return 
         }
     }
 
@@ -133,10 +135,12 @@ struct StopWatchView: View {
             currentState = .breakTime
             timeRemaining = 5 * 60
             isBreakTimeStarted = true
+            restTime = true
         } else if currentState == .breakTime {
             currentState = .work
             timeRemaining = 25 * 60
             isBreakTimeStarted = false
+            restTime = false
         }
     }
 }

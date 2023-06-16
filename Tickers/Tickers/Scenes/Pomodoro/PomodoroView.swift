@@ -13,6 +13,7 @@ let customFontBotoes = Font.tickerFont(font: .bold, size: .large)
 struct PomodoroView: View {
     @State var restTime: Bool = false
     
+    
     var body: some View {
         
         VStack {
@@ -22,7 +23,7 @@ struct PomodoroView: View {
                 .padding(.top, 15)
             
             StopWatchView(restTime: $restTime)
-                .padding(.top, 30)
+            .padding(.top, 30)
             
             Spacer()
             
@@ -38,9 +39,9 @@ struct PomodoroView: View {
                         if (restTime) {
                             
                             Image("BabyCatMimindo")
-//                                .resizable()
                                 .frame(width: 160, height: 130)
                                 .offset(x: 70, y: 120)
+//                                .animation(Animation.linear(duration: 2).repeatForever(autoreverses: true))
                             Image("IconZzZzz")
                                 .offset(x: 10, y: 10)
                             
@@ -53,7 +54,8 @@ struct PomodoroView: View {
                             Image("IconBall")
                                 .offset(x: -180, y: 180)
                         }
-                       
+                        
+                        
                     }
                     
                     Spacer()
