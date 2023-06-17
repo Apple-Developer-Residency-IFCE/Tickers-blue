@@ -12,7 +12,9 @@ let customFontBotoes = Font.tickerFont(font: .bold, size: .large)
 
 struct PomodoroView: View {
     @State var restTime: Bool = false
-    
+    @State var scalevalue = 1.0
+    @State private var rotationAngle = 0.0
+    @State private var offsetValue: CGFloat = 0.0
     
     var body: some View {
         
@@ -23,7 +25,7 @@ struct PomodoroView: View {
                 .padding(.top, 15)
             
             StopWatchView(restTime: $restTime)
-            .padding(.top, 30)
+                .padding(.top, 30)
             
             Spacer()
             
@@ -41,7 +43,16 @@ struct PomodoroView: View {
                             Image("BabyCatMimindo")
                                 .frame(width: 160, height: 130)
                                 .offset(x: 70, y: 120)
-//                                .animation(Animation.linear(duration: 2).repeatForever(autoreverses: true))
+                                .rotationEffect(Angle(degrees: rotationAngle))
+                                .offset(x: offsetValue)
+                                .onAppear {
+                                    withAnimation(Animation.linear(duration: 2).repeatForever(autoreverses: true)) {
+                                        rotationAngle = 20.0
+                                        offsetValue = 50.0
+                                    }
+                                }
+                            //                                .animation(nil)
+                            //                                .animation(Animation.linear(duration: 2).repeatForever(autoreverses: true))
                             Image("IconZzZzz")
                                 .offset(x: 10, y: 10)
                             
@@ -97,9 +108,6 @@ struct PomodoroView: View {
                 
             }
             .edgesIgnoringSafeArea(.bottom)
-            
-            
-            
             
         }
     }

@@ -10,7 +10,7 @@ enum PomodoroState {
 
 struct StopWatchView: View {
     @State private var currentState: PomodoroState = .work
-    @State private var timeRemaining = 25 * 60 // Tempo em segundos
+    @State private var timeRemaining = 2 // Tempo em segundos
     @State private var isTimerRunning = false
     @State private var isBreakTimeStarted = false // Verificar se o tempo de descanso já iniciou
     
@@ -51,16 +51,18 @@ struct StopWatchView: View {
                         } label: {
                             Image("ButtonNext")
                         }.padding(10)
-                        .disabled(currentState != .breakTime || isBreakTimeStarted)
+                            .disabled(currentState != .breakTime)
+                        
                     }
                 }
             }.frame(width: 240, height: 240)
         }
         .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
-            if isTimerRunning && timeRemaining > 0 && !isBreakTimeStarted {
+            if isTimerRunning && timeRemaining > 0 {
                 timeRemaining -= 1
-            } else if timeRemaining <= 0 {
-                timerComplete()
+                if timeRemaining <= 0 {
+                    timerComplete()
+                }
             }
         }
         .onChange(of: currentState) { newValue in
@@ -90,6 +92,7 @@ struct StopWatchView: View {
         currentState = .work
         timeRemaining = 25 * 60
         isBreakTimeStarted = false
+        restTime = false
     }
     
     func startTimer() {
@@ -106,26 +109,19 @@ struct StopWatchView: View {
         isTimerRunning = false
     }
     
-    func stepTimer() {
-        if currentState == .work {
-            timeRemaining -= 1
-            if timeRemaining <= 0 {
-                timerComplete()
-            }
-        }
-    }
-    
     func skipBreak() {
         if currentState == .breakTime {
             currentState = .work
             timeRemaining = 25 * 60
             isBreakTimeStarted = false
+            restTime = false
+            isTimerRunning = true
         } else if currentState == .work && !isBreakTimeStarted {
             currentState = .breakTime
             timeRemaining = 5 * 60
             isBreakTimeStarted = true
-        } else if currentState == .work && isBreakTimeStarted {
-            return 
+            restTime = true
+            isTimerRunning = true
         }
     }
 
@@ -144,6 +140,8 @@ struct StopWatchView: View {
         }
     }
 }
+
+
 
 struct StopWatchView_Previews: PreviewProvider {
     static var previews: some View {
