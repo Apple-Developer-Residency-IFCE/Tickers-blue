@@ -19,7 +19,7 @@ struct NavigationBarTextView: View {
         HStack {
             Text(leadingText)
             Text(trailingText).foregroundColor(.blue)
-        }.font(.tickerFont(font: .bold, size: .xxl))
+        }.font(.tickerFont(font: .bold, size: .xxxl))
     }
 }
 struct NavigationBarTextView_Previews: PreviewProvider {

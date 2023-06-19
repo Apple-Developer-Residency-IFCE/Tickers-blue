@@ -38,26 +38,29 @@ struct PerfilView: View {
     @AppStorage("text") var text: String = ""
 
     var body: some View {
-        VStack(alignment: .leading){
-            Divider()
-            TextFieldView(nome: $text)
-                .padding(.vertical, 27)
-            Divider()
-            Text("Modo Escuro")
-                .font(Font.tickerFont(font: .bold, size: .xxxl))
-                .foregroundColor(.blue)
-            Text("Altera a aparência do app para o modo escolhido")
-                .font(Font.tickerFont(font: .bold, size: .regular))
-            
-            ForEach(Appearence.allCases, id: \.self) { theme in
-                RadioButtonView(text: theme.description, isTapped: theme == (preferredAppearence ?? .system))
-                    .onTapGesture {
-                        preferredAppearence = theme
-                    }
-            }
-            Divider()
+        NavigationView{
+            VStack(alignment: .leading){
+                Divider()
+                TextFieldView(nome: $text)
+                    .padding(.vertical, 27)
+                Divider()
+                Text("Modo Escuro")
+                    .font(Font.tickerFont(font: .bold, size: .xxxl))
+                    .foregroundColor(.blue)
+                Text("Altera a aparência do app para o modo escolhido")
+                    .font(Font.tickerFont(font: .bold, size: .regular))
+                
+                ForEach(Appearence.allCases, id: \.self) { theme in
+                    RadioButtonView(text: theme.description, isTapped: theme == (preferredAppearence ?? .system))
+                        .onTapGesture {
+                            preferredAppearence = theme
+                        }
+                }
+                Divider()
+                Spacer()
+            }.navigationPreferences(leadingText: "Perfil e Preferências")
+                .padding()
         }
-        .padding()
     }
     
     struct PerfilView_Previews: PreviewProvider {
