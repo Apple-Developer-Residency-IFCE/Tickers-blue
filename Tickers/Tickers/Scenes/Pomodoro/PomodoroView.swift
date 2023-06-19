@@ -45,16 +45,19 @@ struct PomodoroView: View {
                                 .offset(x: 70, y: 120)
                                 .rotationEffect(Angle(degrees: rotationAngle))
                                 .offset(x: offsetValue)
+                                .transition(.identity)
                                 .onAppear {
                                     withAnimation(Animation.linear(duration: 2).repeatForever(autoreverses: true)) {
-                                        rotationAngle = 20.0
+                                        rotationAngle = 5.0
                                         offsetValue = 50.0
+                                            
                                     }
                                 }
-                            //                                .animation(nil)
-                            //                                .animation(Animation.linear(duration: 2).repeatForever(autoreverses: true))
+                            
                             Image("IconZzZzz")
                                 .offset(x: 10, y: 10)
+                                .transition(.identity)
+
                             
                         } else {
                             
