@@ -30,7 +30,7 @@ struct NavigationBarCustomModifier: ViewModifier {
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
                     NavigationBarTextView(leadingText, trailingText)
-                }
+                }     
             }
     }
 }
