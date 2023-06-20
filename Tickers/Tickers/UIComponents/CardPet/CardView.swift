@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CardView: View {
+//    var ticker: Ticker
     var locked: Bool
 
     var maxProgress = 40
@@ -16,13 +17,19 @@ struct CardView: View {
     var pet = "BabyCat"
     var level = 1
     
-    init(locked: Bool, _ maxProgress: Int = 40, _ actualProgress: Int = 0, _ title: String = "Haddinha", _ pet: String = "BabyCat", _ level: Int = 1) {
-        self.locked = locked
-        self.maxProgress = maxProgress
-        self.actualProgress = actualProgress
-        self.title = title
-        self.pet = pet
-        self.level = level
+    init(ticker: Ticker){
+//        self.ticker  = ticker
+        
+        if(ticker.locked){
+            pet = ticker.EggImg
+        }else {
+            pet = ticker.TickerImg
+        }
+        locked = ticker.locked
+        maxProgress = ticker.maxProgress
+        actualProgress = ticker.actualProgress
+        title = ticker.title
+        level = ticker.level
     }
 
     var body: some View {
@@ -36,9 +43,7 @@ struct CardView: View {
         }.frame(width: 160, height: 176)
         
             .background {
-                Color
-                    .blue
-                    .opacity(0.1)
+                Color.white
                     .cornerRadius(10)
             }
     }
@@ -47,8 +52,9 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            CardView(locked: false, 21, 20, "Tito", "BabyCat", 2)
-            CardView(locked: true, 0, 0, "blueEgg", "blueEgg")
+//            CardView(locked: false, maxProgress: 10, actualProgress: 0, title: "Gaa", pet: "BabyCat", level: 1)
+            CardView(ticker: Ticker(id: UUID(), title: "Gaa", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: false))
+            CardView(ticker: Ticker(id: UUID(), title: "Gaa", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: true))
         }
         
     }
