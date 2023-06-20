@@ -10,7 +10,7 @@ enum PomodoroState {
 
 struct StopWatchView: View {
     @State private var currentState: PomodoroState = .work
-    @State private var timeRemaining = 2 // Tempo em segundos
+    @State private var timeRemaining = 25 * 60 // Tempo em segundos
     @State private var isTimerRunning = false
     @State private var isBreakTimeStarted = false // Verificar se o tempo de descanso já iniciou
     
