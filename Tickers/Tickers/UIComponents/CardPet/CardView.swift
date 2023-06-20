@@ -43,9 +43,7 @@ struct CardView: View {
         }.frame(width: 160, height: 176)
         
             .background {
-                Color
-                    .blue
-                    .opacity(0.1)
+                Color.white
                     .cornerRadius(10)
             }
     }

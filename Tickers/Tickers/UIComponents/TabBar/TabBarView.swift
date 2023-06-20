@@ -41,8 +41,15 @@ struct TabBarView: View {
     @State var currentSceneIndex = 0
     @State var lastSceneIndex = 0
     @State var isPresenting = false
+    @State var name = "Caio"
     var home: HomeView
-    var perfil: AnyView
+    var perfil: PerfilView
+
+    init(home: HomeView, perfil: PerfilView, name: String = "Fulano") {
+        self.name = name
+        self.home = home
+        self.perfil = perfil
+    }
     
     var body: some View {
         NavigationView {
@@ -77,34 +84,35 @@ struct TabBarView: View {
                             lastSceneIndex = currentSceneIndex
                         }
                 }
-//                .padding(.horizontal, 65)
                 
                 HStack {
                     Button(action: {self.currentSceneIndex = 0}) {
                         VStack {
                             Image("ButtonHome")
                             Text("Home")
-                        }.padding(.top, 720).padding(.leading, 100)
-                    }
+                                .font(.tickerFont(font: .bold, size: .medium))
+                        }
+                    }.padding(.top, 726).padding(.leading, 100)
                     Spacer()
                     Button(action: {self.currentSceneIndex = 2}) {
                         VStack {
                             Image( "ButtonConfig")
 
                             Text("Perfil")
-                        }.padding(.top, 720).padding(.trailing, 100)
+                                .font(.tickerFont(font: .bold, size: .medium))
+                        }
 
-                    }
+                    }.padding(.top, 726).padding(.trailing, 100)
                 }
-            }
+            }.background(.white)
             
-        }
+        }.navigationHome(leadingText: "Seja bem vindo,", trailingText: name)
     }
 }
 
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView(home: HomeView(), perfil: AnyView(PerfilView()))
+        TabBarView(home: HomeView(viewModel: HomeViewModel()), perfil: PerfilView())
     }
 }

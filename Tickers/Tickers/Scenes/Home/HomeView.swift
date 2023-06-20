@@ -8,44 +8,42 @@
 import SwiftUI
 
 struct HomeView: View {
-    let data = [
-//        CardView(locked: false, title: "1"),
-//        CardView(locked: false, title: "2"),
-//        CardView(locked: false, title: "3"),
-        Ticker(id: UUID(), title: "Hadinha", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: false),
-        Ticker(id: UUID(), title: "Hadinha", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: true),
-        Ticker(id: UUID(), title: "Hadinha", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: true),
-        Ticker(id: UUID(), title: "Hadinha", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: true),
-        Ticker(id: UUID(), title: "Hadinha", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: true),
-    ]
+    @ObservedObject var viewModel: HomeViewModel
     
     let columns = [
-        GridItem(.fixed(150)),
-        GridItem(.fixed(150)),
+        GridItem(.fixed(170)),
+        GridItem(.fixed(170)),
     ]
+    
     var body: some View {
-//        VStack {
-//            data[0]
-//        }
         NavigationView{
+            
             VStack(alignment: .leading){
-                Text("Caio").padding(.leading, 38).font(.tickerFont(font: .bold, size: .xxl))
+                Divider()
+                Text("Seus Tickers")
+                    .padding(.top, 10)
+                    .padding(.leading, 38)
+                    .font(.tickerFont(font: .bold, size: .extraLarge)).foregroundColor(.blue)
                 ScrollView {
-                    LazyVGrid(columns: columns) {
-                        ForEach(data, id: \.id) { item in
-                            CardView(ticker: item)
+                    LazyVGrid(columns: columns, alignment: .center) {
+                        ForEach(viewModel.data, id: \.id) { item in
+                            CardView(ticker: item).padding(.top, 10)
                         }
                     }.padding(.horizontal)
-                }.frame(minWidth: 120)
-            }
-            
+                }.frame(minWidth: 440)
+                Divider()
+                    .padding(.top, -9).padding(.horizontal, -30)
+            }.navigationHome(leadingText: "Seja bem vindo(a),", trailingText:viewModel.name)
+                .background{
+                Color("GrayBackground").padding(.bottom, 10)
+            }.padding(.top, 10)
         }
     }
 }
 
 struct HomeTabBar: View {
     var body: some View {
-        TabBarView(home: HomeView(), perfil: AnyView(PerfilView()))
+        TabBarView(home: HomeView(viewModel: HomeViewModel()), perfil: PerfilView())
     }
 }
 

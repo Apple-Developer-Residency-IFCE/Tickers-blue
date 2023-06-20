@@ -8,5 +8,13 @@
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
+    @Published var data = [
+        Ticker(id: UUID(), title: "Hadinha", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 5, locked: false),
+        Ticker(id: UUID(), title: "Hadinha", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: true),
+        Ticker(id: UUID(), title: "Hadinha", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: true),
+        Ticker(id: UUID(), title: "Hadinha", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: true),
+        Ticker(id: UUID(), title: "Hadinha", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: true),
+    ]
     
+    @Published var name = "Caio"
 }
