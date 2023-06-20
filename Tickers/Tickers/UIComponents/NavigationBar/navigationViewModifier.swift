@@ -80,7 +80,7 @@ struct NavigationBarPreferencesModifier: ViewModifier {
     }
 }
 
-extension NavigationView {
+extension View {
     func navigationHome(leadingText: String, trailingText: String)-> some View{
         modifier(NavigationBarHomeModifier(leadingText, trailingText))
     }
