@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-let customFont = Font.tickerFont(font: .bold, size: .xxl)
-let customFontBotoes = Font.tickerFont(font: .bold, size: .large)
+
 
 struct PomodoroView: View {
+    let customFont = Font.tickerFont(font: .bold, size: .xxl)
+    let customFontBotoes = Font.tickerFont(font: .bold, size: .large)
     @State var restTime: Bool = false
     @State var scalevalue = 1.0
     @State private var rotationAngle = 0.0

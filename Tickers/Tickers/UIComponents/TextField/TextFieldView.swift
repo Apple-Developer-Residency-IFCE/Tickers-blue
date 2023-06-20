@@ -8,10 +8,11 @@
 import SwiftUI
 
 
-let customFont = Font.tickerFont(font: .bold, size: .extraLarge)
-let customComent =  Font.tickerFont(font: .regular, size: .small)
+
 
 struct TextFieldView: View {
+    let customFont = Font.tickerFont(font: .bold, size: .extraLarge)
+    let customComent =  Font.tickerFont(font: .regular, size: .small)
     let title: String
     let subtitle: String
     @Binding var nome: String
