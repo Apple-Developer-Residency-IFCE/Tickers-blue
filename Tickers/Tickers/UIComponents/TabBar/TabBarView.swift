@@ -18,12 +18,6 @@ struct teste: View {
                         Image("ButtonBack").onTapGesture {
                             isPresenting = false
                         }
-//                                            Button {
-//                                                isPresenting = false
-//                                            } label: {
-//                                                Text("voltar")
-//                                            }
-
                     }
                 }
         }
@@ -73,7 +67,7 @@ struct TabBarView: View {
                             isPresenting = true //aparecer pomodoro
                         }
                         .fullScreenCover(isPresented: $isPresenting) {
-                            teste(isPresenting: $isPresenting)
+                            PomodoroView(isPresenting: $isPresenting)
                         }
                     perfil
                         .tabItem {
