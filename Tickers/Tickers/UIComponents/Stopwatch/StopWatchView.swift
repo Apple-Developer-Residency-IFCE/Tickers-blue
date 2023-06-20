@@ -9,6 +9,7 @@ enum PomodoroState {
 }
 
 struct StopWatchView: View {
+    
     @State private var currentState: PomodoroState = .work
     @State private var timeRemaining = 25 * 60 // Tempo em segundos
     @State private var isTimerRunning = false
@@ -51,7 +52,7 @@ struct StopWatchView: View {
                         } label: {
                             Image("ButtonNext")
                         }.padding(10)
-                            .disabled(currentState != .breakTime)
+//                            .disabled(currentState != .breakTime)
                         
                     }
                 }
@@ -110,20 +111,36 @@ struct StopWatchView: View {
     }
     
     func skipBreak() {
-        if currentState == .breakTime {
-            currentState = .work
-            timeRemaining = 25 * 60
-            isBreakTimeStarted = false
-            restTime = false
-            isTimerRunning = true
-        } else if currentState == .work && !isBreakTimeStarted {
-            currentState = .breakTime
-            timeRemaining = 5 * 60
-            isBreakTimeStarted = true
-            restTime = true
-            isTimerRunning = true
+        switch currentState {
+        case .breakTime:
+            timerComplete()
+        case .work:
+            if isBreakTimeStarted {
+                currentState = .work
+                timeRemaining = 25 * 60
+                isBreakTimeStarted = false
+                restTime = false
+                isTimerRunning = true
+            } else {
+                currentState = .breakTime
+                timeRemaining = 5 * 60
+                isBreakTimeStarted = true
+                restTime = true
+                isTimerRunning = true
+            }
+        case .pause:
+            if currentState == .breakTime {
+                currentState = .work
+                timeRemaining = 25 * 60
+                isBreakTimeStarted = false
+                restTime = false
+                isTimerRunning = true
+            }
+            break
         }
     }
+
+
 
     
     func timerComplete() {
