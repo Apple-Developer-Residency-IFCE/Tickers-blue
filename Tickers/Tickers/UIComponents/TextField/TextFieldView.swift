@@ -11,20 +11,18 @@ import SwiftUI
 
 
 struct TextFieldView: View {
-    let customFont = Font.tickerFont(font: .bold, size: .extraLarge)
-    let customComent =  Font.tickerFont(font: .regular, size: .small)
-    let title: String
-    let subtitle: String
+    let title: String = "Seu nome"
+    let subtitle: String = "Define como os tickers chamarão você"
     @Binding var nome: String
     
     var body: some View {
         VStack(alignment: .leading){
             Text(title)
-                .font(customFont)
+                .font(Font.tickerFont(font: .bold, size: .xxxl))
                 .foregroundColor(.blue)
             
             Text(subtitle)
-                .font(customComent)
+                .font(Font.tickerFont(font: .bold, size: .regular))
                 .padding(.bottom)
             
             TextField("Escreva aqui seu nome", text: $nome)
@@ -35,17 +33,16 @@ struct TextFieldView: View {
                         .frame(height: 50)
                 }
             
-        }.padding(10)
+        }//.padding(10)
     }
 }
 
 fileprivate struct TextFieldToPreview: View {
-    @State var text: String = ""
+    @AppStorage("text") var text: String = ""
     
     var body: some View {
-        TextFieldView(title: "Seu nome",
-                      subtitle: "Define como os tickers chamarão você",
-                      nome: $text)
+        TextFieldView(nome: $text)
+
     }
 }
 
