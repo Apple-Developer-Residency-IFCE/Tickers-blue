@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3441CC182A3D10AC004A2D4C /* TickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441CC172A3D10AC004A2D4C /* TickerModel.swift */; };
+		3441CC1A2A3D3003004A2D4C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441CC192A3D3003004A2D4C /* HomeViewModel.swift */; };
 		3455BC432A3A75C7004A430A /* navigationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455BC422A3A75C7004A430A /* navigationViewModifier.swift */; };
 		3455BC462A3A776E004A430A /* NavigationBarTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455BC452A3A776E004A430A /* NavigationBarTextView.swift */; };
 		345E236E2A2FE15A00AEF1CB /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345E236C2A2FE15A00AEF1CB /* CircularProgressView.swift */; };
@@ -59,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3441CC172A3D10AC004A2D4C /* TickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerModel.swift; sourceTree = "<group>"; };
+		3441CC192A3D3003004A2D4C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3455BC422A3A75C7004A430A /* navigationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationViewModifier.swift; sourceTree = "<group>"; };
 		3455BC452A3A776E004A430A /* NavigationBarTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTextView.swift; sourceTree = "<group>"; };
 		345E236C2A2FE15A00AEF1CB /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				345E239E2A30066200AEF1CB /* HomeView.swift */,
+				3441CC172A3D10AC004A2D4C /* TickerModel.swift */,
+				3441CC192A3D3003004A2D4C /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -532,6 +538,7 @@
 				6427D6E62A2560C700F66288 /* SoundScreenView.swift in Sources */,
 				3455BC462A3A776E004A430A /* NavigationBarTextView.swift in Sources */,
 				6492E9B62A202A7600F608BB /* TickerFont.swift in Sources */,
+				3441CC182A3D10AC004A2D4C /* TickerModel.swift in Sources */,
 				C867C46D2A39183F0035D757 /* MissionCellView.swift in Sources */,
 				6488087E2A26CD630031D2BA /* LvlProgressBarView.swift in Sources */,
 				345E23952A30054000AEF1CB /* TextFieldView.swift in Sources */,
@@ -544,6 +551,7 @@
 				345E23972A30055600AEF1CB /* TabBarView.swift in Sources */,
 				3455BC432A3A75C7004A430A /* navigationViewModifier.swift in Sources */,
 				345E23A32A3006E700AEF1CB /* PerfilView.swift in Sources */,
+				3441CC1A2A3D3003004A2D4C /* HomeViewModel.swift in Sources */,
 				345E23A52A3006F100AEF1CB /* PreferencesView.swift in Sources */,
 				6427D6E62A2560C700F66288 /* SoundScreenView.swift in Sources */,
 				34626C972A31335B004737E7 /* model.swift in Sources */,
