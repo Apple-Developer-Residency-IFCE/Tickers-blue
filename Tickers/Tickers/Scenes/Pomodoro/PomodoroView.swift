@@ -15,12 +15,14 @@ struct PomodoroView: View {
     
     let customFont = Font.tickerFont(font: .bold, size: .xxl)
     let customFontBotoes = Font.tickerFont(font: .bold, size: .large)
+    
     @State var restTime: Bool = false
     @State var scalevalue = 1.0
     @State private var rotationAngle = 0.0
     @State private var offsetValue: CGFloat = 0.0
     @Binding var isPresenting: Bool
     @State var isPresentingFoco: Bool = false
+    @State var isPresentingSounds: Bool = false
     
     var body: some View {
         NavigationView{
@@ -35,7 +37,7 @@ struct PomodoroView: View {
                         .resizable()
                         .padding(.top, 40)
                         .frame(height: .infinity)
-                    
+
                     VStack{
                         
                         HStack {
@@ -69,7 +71,6 @@ struct PomodoroView: View {
                                 Image("IconBall")
                                     .offset(x: -180, y: 180)
                             }
-                            
                             
                         }
                         
@@ -107,8 +108,13 @@ struct PomodoroView: View {
                                 Text("Sons")
                                     .font(customFontBotoes)
                                     .foregroundColor(.blue)
+                            }.onTapGesture {
+                                isPresentingSounds = true
                             }
                             .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
+                            .sheet(isPresented: $isPresentingSounds) {
+                                SoundScreenView(isPresentingSounds: $isPresentingSounds)
+                            }
                             
                         }
                         .padding(.bottom, 50)

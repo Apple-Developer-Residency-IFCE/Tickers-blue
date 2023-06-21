@@ -9,23 +9,17 @@ import SwiftUI
 
 
 struct SoundScreenView: View {
-    @State private var showingSounds = false
     @State var selectedOption: String?
-    
+    @Binding var isPresentingSounds: Bool
     let options = ["Chuva", "Tempestade", "Água Corrente", "Lo-fi"]
     
     var body: some View {
-        Button("Sons") {
-            showingSounds.toggle()
-        }
-        .sheet(isPresented: $showingSounds) {
             if #available(iOS 16.0, *) {
                 bottomSheetContent
                     .presentationDetents([.height(250)])
             } else {
                 bottomSheetContent
             }
-        }
     }
     
     var bottomSheetContent: some View {
@@ -39,7 +33,7 @@ struct SoundScreenView: View {
                 Spacer()
                 Image("ButtonExitPopups")
                     .onTapGesture {
-                        showingSounds = false
+                        isPresentingSounds = false
                     }
             }
             Divider()
@@ -55,9 +49,14 @@ struct SoundScreenView: View {
     }
 }
 
-
+fileprivate struct SoundScreenBinding: View {
+    @State var isPresentingSounds: Bool = true
+    var body: some View {
+        SoundScreenView(selectedOption: "sss", isPresentingSounds: $isPresentingSounds)
+    }
+}
 struct SoundScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        SoundScreenView(selectedOption: "sss")
+        SoundScreenBinding()
     }
 }

@@ -10,6 +10,7 @@ enum PomodoroState {
 
 struct StopWatchView: View {
     @ObservedObject var viewModel: PomodoroViewModel
+    
     @State private var currentState: PomodoroState = .work
     @State private var isTimerRunning = false
     @State private var isBreakTimeStarted = false // Verificar se o tempo de descanso já iniciou
@@ -50,7 +51,7 @@ struct StopWatchView: View {
                         } label: {
                             Image("ButtonNext")
                         }.padding(10)
-                            .disabled(currentState != .breakTime)
+//                            .disabled(currentState != .breakTime)
                         
                     }
                 }

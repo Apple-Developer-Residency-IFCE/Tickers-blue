@@ -8,46 +8,56 @@
 import SwiftUI
 
 struct MissionCellView: View {
-    var nomeImagem: String
-    var titulo: String
-    var descricao: String
-    var cor: String
-    var corFundo: String
+
+    var tasksCompleted: Int
+    var totalTasks: Int
+    var title: String
+    var description: String
+    var color: Color
+    var background: Color
     
     var body: some View {
         HStack() {
-            Image(nomeImagem)
-            VStack(alignment: .leading){
-                Text(titulo)
-                    .font(Font.tickerFont(font: .bold, size: .xxxl))
+            Image("Challenge")
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .frame(width: 68, height: 68)
+                        .foregroundColor(color)
+                )
+                .padding(.leading, 15)
+            
+            VStack(alignment: .leading, spacing: 0){
+                Text(title)
+                    .font(Font.tickerFont(font: .bold, size: .xxl))
                     .foregroundColor(.black)
-                Text(descricao)
-                    .font(Font.tickerFont(font: .regular, size: .large))
+                Text(description)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.trailing, 15)
+                    .font(Font.tickerFont(font: .regular, size: .regular))
                     .foregroundColor(.black)
                 HStack{
-                    ProgressView(value: Double(4), total: Double(10))
-                        .frame(width: 240, height: 8.0)
+                    ProgressView(value: Double(tasksCompleted), total: Double(totalTasks))
+                        .frame(height: 6.0)
                         .scaleEffect(x:1, y: 2.5, anchor: .center)
-                        .tint(Color(cor))
-                        .background(Color(corFundo))
+                        .tint(color)
+                        .background(background)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
-                    Text("1/10")
+                    Text("\(tasksCompleted)/\(totalTasks)")
                         .padding(.trailing, 0)
                         .padding(.leading, 0).opacity(0.4)
                         .font(Font.tickerFont(font: .bold, size: .medium))
                 }
-            }
-        }.padding()
+            }.padding(.leading, 15)
+        }.padding(.horizontal)
             .background(
                 RoundedRectangle(cornerRadius: 20)
                     .fill(Color.white)
             )
     }
-    
 }
 
 struct MissionCellView_Previews: PreviewProvider {
     static var previews: some View {
-        MissionCellView(nomeImagem: "ChallengePink", titulo: "Primeira Vez", descricao: "Finalize o seu primeiro pomodoro do dia e ganhe 50 xp", cor: "PinkMissionScreen", corFundo: "LightPinkMissionScreen")
+        MissionCellView(tasksCompleted: 1, totalTasks: 10, title: "Primeira Vez", description: "Finalize o seu primeiro pomodoro do dia e ganhe 50 xp", color: .init("PinkMissionScreen"), background: .init("LightPinkMissionScreen"))
     }
 }
