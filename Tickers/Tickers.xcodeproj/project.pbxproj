@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		340FA70B2A4271D1000232E0 /* PomodoroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340FA70A2A4271D1000232E0 /* PomodoroViewModel.swift */; };
 		3441CC182A3D10AC004A2D4C /* TickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441CC172A3D10AC004A2D4C /* TickerModel.swift */; };
 		3441CC1A2A3D3003004A2D4C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3441CC192A3D3003004A2D4C /* HomeViewModel.swift */; };
 		3455BC432A3A75C7004A430A /* navigationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3455BC422A3A75C7004A430A /* navigationViewModifier.swift */; };
@@ -63,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		340FA70A2A4271D1000232E0 /* PomodoroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroViewModel.swift; sourceTree = "<group>"; };
 		3441CC172A3D10AC004A2D4C /* TickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerModel.swift; sourceTree = "<group>"; };
 		3441CC192A3D3003004A2D4C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		3455BC422A3A75C7004A430A /* navigationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = navigationViewModifier.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				345E23A72A30071400AEF1CB /* PomodoroView.swift */,
+				340FA70A2A4271D1000232E0 /* PomodoroViewModel.swift */,
 			);
 			path = Pomodoro;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				64D0A7982A27FA860074EF28 /* CardView.swift in Sources */,
 				646E1B872A280A64004B4583 /* ButtonReturn.swift in Sources */,
 				345E239F2A30066200AEF1CB /* HomeView.swift in Sources */,
+				340FA70B2A4271D1000232E0 /* PomodoroViewModel.swift in Sources */,
 				642E72962A2A9CF7008A6F21 /* RadioButtonView.swift in Sources */,
 				345E23972A30055600AEF1CB /* TabBarView.swift in Sources */,
 				3455BC432A3A75C7004A430A /* navigationViewModifier.swift in Sources */,

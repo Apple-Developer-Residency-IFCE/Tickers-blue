@@ -8,6 +8,7 @@ enum TickerFont: CGFloat {
     case extraLarge = 18.0
     case xxl = 20.0
     case xxxl = 24.0
+    case xxxxl = 109.0
 }
 
 enum NunitoFont: String {

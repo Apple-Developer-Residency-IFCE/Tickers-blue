@@ -11,6 +11,8 @@ import SwiftUI
 
 struct PomodoroView: View {
     
+    @ObservedObject var viewModel: PomodoroViewModel
+    
     let customFont = Font.tickerFont(font: .bold, size: .xxl)
     let customFontBotoes = Font.tickerFont(font: .bold, size: .large)
     
@@ -19,12 +21,13 @@ struct PomodoroView: View {
     @State private var rotationAngle = 0.0
     @State private var offsetValue: CGFloat = 0.0
     @Binding var isPresenting: Bool
+    @State var isPresentingFoco: Bool = false
     @State var isPresentingSounds: Bool = false
     
     var body: some View {
         NavigationView{
             VStack {
-                StopWatchView(restTime: $restTime)
+                StopWatchView(viewModel: viewModel, restTime: $restTime)
                     .padding(.top, 30)
                 
                 Spacer()
@@ -81,8 +84,13 @@ struct PomodoroView: View {
                                 Text("Foco")
                                     .font(customFontBotoes)
                                     .foregroundColor(.blue)
+                            }.onTapGesture {
+                                isPresentingFoco = true
                             }
                             .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
+                            .fullScreenCover(isPresented: $isPresentingFoco) {
+                                FocoView(isPresentingFoco: $isPresentingFoco, viewModel: viewModel)
+                            }
                             
                             
                             VStack {
@@ -134,7 +142,7 @@ struct PomodoroView: View {
     fileprivate struct pomodoroBinding: View {
         @State var isPresenting = true
         var body: some View {
-            PomodoroView(isPresenting: $isPresenting)
+            PomodoroView(viewModel: PomodoroViewModel(), isPresenting: $isPresenting)
         }
     }
     
