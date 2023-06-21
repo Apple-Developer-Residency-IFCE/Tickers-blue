@@ -7,7 +7,7 @@ struct TickersApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeTabBar()
+            HomeTabBar().preferredColorScheme(preferredAppearence?.toColorScheme)
         }
     }
 }

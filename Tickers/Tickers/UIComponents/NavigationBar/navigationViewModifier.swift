@@ -52,7 +52,8 @@ struct NavigationBarHomeModifier: ViewModifier {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink {
-                        Text("Ainda não implementado")
+                        MissionScreenView(missionViewModel: MissionViewModel())
+                            .navigationBarBackButtonHidden(true)
                     } label: {
                         Image("ButtonMissoes")
                     }
