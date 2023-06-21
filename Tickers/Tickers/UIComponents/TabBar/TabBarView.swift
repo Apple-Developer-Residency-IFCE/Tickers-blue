@@ -67,7 +67,7 @@ struct TabBarView: View {
                             isPresenting = true //aparecer pomodoro
                         }
                         .fullScreenCover(isPresented: $isPresenting) {
-                            PomodoroView(isPresenting: $isPresenting)
+                            PomodoroView(viewModel: PomodoroViewModel(), isPresenting: $isPresenting)
                         }
                     perfil
                         .tabItem {
