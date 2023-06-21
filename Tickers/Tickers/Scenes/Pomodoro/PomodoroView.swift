@@ -7,14 +7,141 @@
 
 import SwiftUI
 
-struct PomodoroView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
 
-struct PomodoroView_Previews: PreviewProvider {
-    static var previews: some View {
-        PomodoroView()
+
+struct PomodoroView: View {
+    
+    let customFont = Font.tickerFont(font: .bold, size: .xxl)
+    let customFontBotoes = Font.tickerFont(font: .bold, size: .large)
+    
+    @State var restTime: Bool = false
+    @State var scalevalue = 1.0
+    @State private var rotationAngle = 0.0
+    @State private var offsetValue: CGFloat = 0.0
+    @Binding var isPresenting: Bool
+    @State var isPresentingSounds: Bool = false
+    
+    var body: some View {
+        NavigationView{
+            VStack {
+                StopWatchView(restTime: $restTime)
+                    .padding(.top, 30)
+                
+                Spacer()
+                
+                ZStack(alignment: .center) {
+                    Image("Ellipse")
+                        .resizable()
+                        .padding(.top, 40)
+                        .frame(height: .infinity)
+
+                    VStack{
+                        
+                        HStack {
+                            if (restTime) {
+                                
+                                Image("BabyCatMimindo")
+                                    .frame(width: 160, height: 130)
+                                    .offset(x: 70, y: 120)
+                                    .rotationEffect(Angle(degrees: rotationAngle))
+                                    .offset(x: offsetValue)
+                                    .transition(.identity)
+                                    .onAppear {
+                                        withAnimation(Animation.linear(duration: 2).repeatForever(autoreverses: true)) {
+                                            rotationAngle = 5.0
+                                            offsetValue = 50.0
+                                            
+                                        }
+                                    }
+                                
+                                Image("IconZzZzz")
+                                    .offset(x: 10, y: 10)
+                                    .transition(.identity)
+                                
+                                
+                            } else {
+                                
+                                Image("BabyCat")
+                                    .resizable()
+                                    .frame(width: 160, height: 130)
+                                    .offset(x: 50, y: 100)
+                                Image("IconBall")
+                                    .offset(x: -180, y: 180)
+                            }
+                            
+                        }
+                        
+                        Spacer()
+                        
+                        
+                        HStack {
+                            
+                            VStack {
+                                Image("ButtonFoco")
+                                Text("Foco")
+                                    .font(customFontBotoes)
+                                    .foregroundColor(.blue)
+                            }
+                            .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
+                            
+                            
+                            VStack {
+                                Image("ButtonDefinicoes")
+                                Text("Definiçoes")
+                                    .font(customFontBotoes)
+                                    .foregroundColor(.blue)
+                            }
+                            .padding(EdgeInsets(top: 0, leading: 30, bottom: 20, trailing: 30))
+                            
+                            
+                            
+                            VStack {
+                                Image("ButtonSons")
+                                Text("Sons")
+                                    .font(customFontBotoes)
+                                    .foregroundColor(.blue)
+                            }.onTapGesture {
+                                isPresentingSounds = true
+                            }
+                            .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
+                            .sheet(isPresented: $isPresentingSounds) {
+                                SoundScreenView(isPresentingSounds: $isPresentingSounds)
+                            }
+                            
+                        }
+                        .padding(.bottom, 50)
+                        
+                    }
+                    
+                }
+                .edgesIgnoringSafeArea(.bottom)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Image("ButtonBack").onTapGesture {
+                            isPresenting = false
+                        }
+                    }
+                    ToolbarItem(placement: .principal) {
+                        Text("Pomodoro")
+                            .font(customFont)
+                            .foregroundColor(.blue)
+                    }
+                }
+            }
+        }
     }
+    
+    fileprivate struct pomodoroBinding: View {
+        @State var isPresenting = true
+        var body: some View {
+            PomodoroView(isPresenting: $isPresenting)
+        }
+    }
+    
+    struct PomodoroView_Previews: PreviewProvider {
+        static var previews: some View {
+            pomodoroBinding()
+        }
+    }
+    
 }
