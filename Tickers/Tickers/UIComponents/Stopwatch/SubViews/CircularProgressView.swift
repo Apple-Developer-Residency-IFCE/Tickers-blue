@@ -3,6 +3,10 @@ import SwiftUI
 struct CircularProgressView: View {
     let lineWidth: CGFloat = 6
     let progress: Double
+    
+    func realProgress() -> Double {
+        return 1 - progress
+    }
     var body: some View {
         ZStack {
             Circle()
@@ -10,15 +14,15 @@ struct CircularProgressView: View {
                 lineWidth: lineWidth
             )
             Circle()
-                .trim(from: 0, to: progress)
+                .trim(from: 0, to: realProgress())
                 .stroke(Color("blueColorPrimary"), style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
                 .rotationEffect(.degrees(-90))
-                .animation(.easeOut, value: progress)
+                .animation(.easeOut, value: realProgress())
             ballKnobView
         }
     }
     private var ballKnobView: some View {
-        GeometryReader { knobGeo in
+        GeometryReader { geo in
             Circle()
                 .fill(Color("blueColorPrimary"))
                 .frame(width: 25, height: 25)
@@ -28,13 +32,13 @@ struct CircularProgressView: View {
                         .padding(5)
                 )
                 .frame(
-                    width: knobGeo.size.width,
-                    height: knobGeo.size.height,
+                    width: geo.size.width,
+                    height: geo.size.height,
                     alignment: .center
                 )
-                .offset(x: knobGeo.size.height / 2)
-                .rotationEffect(.degrees((progress * 360) - 90))
-                .animation(.easeOut, value: progress)
+                .offset(x: geo.size.height / 2)
+                .rotationEffect(.degrees((realProgress() * 360) - 90))
+                .animation(.easeOut, value: realProgress())
         }
     }
 }

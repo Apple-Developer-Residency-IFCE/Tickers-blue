@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
-    
+
     let columns = [
         GridItem(.fixed(170)),
         GridItem(.fixed(170)),

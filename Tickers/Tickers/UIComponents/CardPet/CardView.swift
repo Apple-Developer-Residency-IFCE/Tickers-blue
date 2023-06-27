@@ -38,12 +38,12 @@ struct CardView: View {
                 PetCardView(maxProgress, actualProgress, title, pet, "Lvl \(level)")
             }else {
                 EggCardView(pet: pet)
-                    
+
             }
         }.frame(width: 160, height: 176)
         
             .background {
-                Color.white
+                Color("whiteContainer")
                     .cornerRadius(10)
             }
     }

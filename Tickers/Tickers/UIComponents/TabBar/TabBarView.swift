@@ -46,7 +46,6 @@ struct TabBarView: View {
     }
     
     var body: some View {
-        NavigationView {
             ZStack {
                 TabView(selection: $currentSceneIndex){
                     home
@@ -100,7 +99,6 @@ struct TabBarView: View {
                 }
             }.background(.white)
             
-        }.navigationHome(leadingText: "Seja bem vindo,", trailingText: name)
     }
 }
 
