@@ -34,6 +34,7 @@ struct PetCardView: View {
                     .frame(maxWidth: 12,maxHeight: 12)
                     .onTapGesture {
                         //Mudar o titulo
+                        print("Mudar o título")
                     }
             }
             Image(pet)

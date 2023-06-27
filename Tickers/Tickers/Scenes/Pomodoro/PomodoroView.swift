@@ -23,6 +23,7 @@ struct PomodoroView: View {
     @Binding var isPresenting: Bool
     @State var isPresentingFoco: Bool = false
     @State var isPresentingSounds: Bool = false
+    @State var isPresentingDefinition: Bool = false
     
     var body: some View {
         NavigationView{
@@ -98,10 +99,20 @@ struct PomodoroView: View {
                                 Text("Definiçoes")
                                     .font(customFontBotoes)
                                     .foregroundColor(.blue)
+                            }.onTapGesture {
+                                isPresentingDefinition = true
                             }
                             .padding(EdgeInsets(top: 0, leading: 30, bottom: 20, trailing: 30))
-                            
-                            
+                            .sheet(isPresented: $isPresentingDefinition) {
+                                
+                                if #available(iOS 16.0, *) {
+                                    DefinitionsView(isPresentingDefinition: $isPresentingDefinition)
+                                        .presentationDetents([.height(640)])
+                                } else {
+                                    DefinitionsView(isPresentingDefinition: $isPresentingDefinition)
+                                }
+
+                            }
                             
                             VStack {
                                 Image("ButtonSons")

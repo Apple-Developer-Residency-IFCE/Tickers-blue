@@ -12,7 +12,7 @@ struct SoundScreenView: View {
     @State var selectedOption: String?
     @Binding var isPresentingSounds: Bool
     let options = ["Chuva", "Tempestade", "Água Corrente", "Lo-fi"]
-    
+
     var body: some View {
             if #available(iOS 16.0, *) {
                 bottomSheetContent
