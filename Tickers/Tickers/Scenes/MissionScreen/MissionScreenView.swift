@@ -14,16 +14,17 @@ struct MissionScreenView: View {
                 Divider()
                 Group{
                     ForEach(missionViewModel.missions){ mission in
-                        MissionCellView(tasksCompleted: mission.tasksCompleted , totalTasks: mission.totalTasks, title: mission.title, description: mission.description, color: mission.color, background: mission.background)
+                        MissionCellView(progressValues: mission.progressValues, title: mission.title, description: mission.description)
                     }
                     .padding(.bottom, 8)
                 }.padding(.horizontal)
                 Spacer()
-            } .background(Color("LightGrey"))
-              .navigationCustom(leadingText: "Missões", trailingText: "")
+            }
+                    .background(Color("LightGrey"))
+                    .navigationCustom(leadingText: "Conquistas", trailingText: "")
+          }
         }
     }
-}
 
 
 struct MissionScreenView_Previews: PreviewProvider {
