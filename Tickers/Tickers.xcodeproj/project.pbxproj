@@ -24,6 +24,7 @@
 		34626C922A300A61004737E7 /* DefinitionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34626C912A300A61004737E7 /* DefinitionsView.swift */; };
 		34626C972A31335B004737E7 /* MissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34626C962A31335B004737E7 /* MissionModel.swift */; };
 		34626C992A31337D004737E7 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34626C982A31337D004737E7 /* NavigationBar.swift */; };
+		35B5C9D02A4CE6430088DF6F /* AchievCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B5C9CF2A4CE6430088DF6F /* AchievCardView.swift */; };
 		642697F52A1D797700A7C788 /* TickersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642697F42A1D797700A7C788 /* TickersApp.swift */; };
 		642697F92A1D797800A7C788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642697F82A1D797800A7C788 /* Assets.xcassets */; };
 		642697FC2A1D797800A7C788 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642697FB2A1D797800A7C788 /* Preview Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		34626C912A300A61004737E7 /* DefinitionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionsView.swift; sourceTree = "<group>"; };
 		34626C962A31335B004737E7 /* MissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionModel.swift; sourceTree = "<group>"; };
 		34626C982A31337D004737E7 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		35B5C9CF2A4CE6430088DF6F /* AchievCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievCardView.swift; sourceTree = "<group>"; };
 		642697F12A1D797700A7C788 /* Tickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tickers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		642697F42A1D797700A7C788 /* TickersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersApp.swift; sourceTree = "<group>"; };
 		642697F82A1D797800A7C788 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -298,6 +300,14 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		35B5C9CC2A4CE5320088DF6F /* AchievementCard */ = {
+			isa = PBXGroup;
+			children = (
+				35B5C9CF2A4CE6430088DF6F /* AchievCardView.swift */,
+			);
+			path = AchievementCard;
+			sourceTree = "<group>";
+		};
 		642697E82A1D797700A7C788 = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +398,7 @@
 		64D0A7942A27F5F60074EF28 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				35B5C9CC2A4CE5320088DF6F /* AchievementCard */,
 				3443B77D2A43918D00AA9460 /* New Group */,
 				C867C4682A3917710035D757 /* MissionCell */,
 				345E23992A3005D300AEF1CB /* NavigationBar */,
@@ -585,6 +596,7 @@
 				34626C992A31337D004737E7 /* NavigationBar.swift in Sources */,
 				C867C47C2A4123BC0035D757 /* MissionScreenView.swift in Sources */,
 				642697F52A1D797700A7C788 /* TickersApp.swift in Sources */,
+				35B5C9D02A4CE6430088DF6F /* AchievCardView.swift in Sources */,
 				345E23A82A30071400AEF1CB /* PomodoroView.swift in Sources */,
 				345E236E2A2FE15A00AEF1CB /* CircularProgressView.swift in Sources */,
 				646E1B872A280A64004B4583 /* ButtonReturn.swift in Sources */,
