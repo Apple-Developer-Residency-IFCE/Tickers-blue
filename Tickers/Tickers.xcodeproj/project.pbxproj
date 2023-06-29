@@ -134,13 +134,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3443B77D2A43918D00AA9460 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		3455BC442A3A75F8004A430A /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,7 +392,6 @@
 			isa = PBXGroup;
 			children = (
 				35B5C9CC2A4CE5320088DF6F /* AchievementCard */,
-				3443B77D2A43918D00AA9460 /* New Group */,
 				C867C4682A3917710035D757 /* MissionCell */,
 				345E23992A3005D300AEF1CB /* NavigationBar */,
 				345E23932A30052700AEF1CB /* TabBar */,
