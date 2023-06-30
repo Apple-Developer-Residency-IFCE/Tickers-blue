@@ -391,6 +391,7 @@
 		64D0A7942A27F5F60074EF28 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				35B5C9CC2A4CE5320088DF6F /* AchievementCard */,
 				C867C4682A3917710035D757 /* MissionCell */,
 				345E23992A3005D300AEF1CB /* NavigationBar */,
 				345E23932A30052700AEF1CB /* TabBar */,
