@@ -9,50 +9,34 @@ import SwiftUI
 
 
 struct SoundScreenView: View {
-    @State var selectedOption: String?
-    @Binding var isPresentingSounds: Bool
-    let options = ["Chuva", "Tempestade", "Água Corrente", "Lo-fi"]
-
-    var body: some View {
-            if #available(iOS 16.0, *) {
-                bottomSheetContent
-                    .presentationDetents([.height(250)])
-            } else {
-                bottomSheetContent
-            }
-    }
+    @ObservedObject var viewModel: SoundViewModel
     
-    var bottomSheetContent: some View {
-        VStack(alignment: .leading){
-            HStack(spacing: 0){
-                Image("ButtonSons")
-                    .padding(.trailing, 12)
-                Text("Sons")
-                    .font(Font.tickerFont(font: .bold, size: .xxxl))
-                    .foregroundColor(.blue)
-                Spacer()
-                Image("ButtonExitPopups")
-                    .onTapGesture {
-                        isPresentingSounds = false
+    var body: some View {
+        NavigationView {
+            ZStack {
+                VStack(alignment: .leading){
+                    Divider().padding()
+                    HStack{
+                        Image("ButtonSons").padding(.leading, 15)
+                        Text("Sons").font(Font.tickerFont(font: .bold, size: .xxxl)).foregroundColor(.blue)
+                        Spacer()
                     }
-            }
-            Divider()
-            ForEach(options, id: \.self) { option in
-                RadioButtonView(text: option, isTapped: option == selectedOption)
-                    .onTapGesture {
-                        selectedOption = option
+                    Group{
+                        ForEach(viewModel.sounds){ sound in
+                            soundCardView(sound: sound, viewModel: viewModel)
+                        }
                     }
+                    Spacer()
+                }.navigationCustom(leadingText: "Pomodoro", trailingText: "")
             }
         }
-        .padding()
-        .interactiveDismissDisabled()
     }
 }
 
 fileprivate struct SoundScreenBinding: View {
     @State var isPresentingSounds: Bool = true
     var body: some View {
-        SoundScreenView(selectedOption: "sss", isPresentingSounds: $isPresentingSounds)
+        SoundScreenView(viewModel: SoundViewModel())
     }
 }
 struct SoundScreenView_Previews: PreviewProvider {

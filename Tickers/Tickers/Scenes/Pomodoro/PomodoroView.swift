@@ -37,7 +37,7 @@ struct PomodoroView: View {
                     Image("Ellipse")
                         .resizable()
                         .padding(.top, 40)
-                        .frame(height: .infinity)
+                        .frame(maxHeight: .infinity)
 
                     VStack{
                         
@@ -123,8 +123,8 @@ struct PomodoroView: View {
                                 isPresentingSounds = true
                             }
                             .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
-                            .sheet(isPresented: $isPresentingSounds) {
-                                SoundScreenView(isPresentingSounds: $isPresentingSounds)
+                            .fullScreenCover(isPresented: $isPresentingSounds) {
+                                SoundScreenView(viewModel: SoundViewModel())
                             }
                             
                         }
