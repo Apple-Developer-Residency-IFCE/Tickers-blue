@@ -9,21 +9,23 @@ import SwiftUI
 
 struct MissionCellView: View {
     
+    var isCompleted: Bool = false
     var progressValues: [Int]?
     var title: String
     var description: String
     
-    let background : UIColor
+    init(mission: Mission) {
+        self.isCompleted = mission.isCompleted
+        self.progressValues = mission.progressValues
+        self.title = mission.title
+        self.description = mission.description
+    }
     
     var body: some View {
-        
-        
-        
-        
         ZStack(alignment: .center) {
             RoundedRectangle(cornerRadius: 20)
                 .frame(width: 335, height: 88)
-                .foregroundColor(.red)
+                .foregroundColor(isCompleted ? .init("Achiev") : .red)
             Group{
                 HStack {
                     Image("Statelocked")
@@ -31,12 +33,12 @@ struct MissionCellView: View {
                     VStack(alignment: .leading, spacing: 0){
                         Text(title)
                             .font(Font.tickerFont(font: .bold, size: .large))
-                            .foregroundColor(.black)
+                            .foregroundColor(textColor)
                         Text(description)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.trailing, 15)
                             .font(Font.tickerFont(font: .regular, size: .medium))
-                            .foregroundColor(.black)
+                            .foregroundColor(textColor)
                         
                         HStack(){
                             createProgressBar()

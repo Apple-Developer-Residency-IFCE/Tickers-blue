@@ -7,7 +7,7 @@ struct TickersApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeTabBar().preferredColorScheme(preferredAppearence?.toColorScheme)
+//            MissionCellView(progressValues: [10, 10], title: "Primeira Vez", description: "Finalize o seu primeiro pomodoro do dia e ganhe 50 xp")
         }
     }
 }
