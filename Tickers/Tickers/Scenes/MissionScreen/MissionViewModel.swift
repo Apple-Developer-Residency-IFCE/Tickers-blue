@@ -12,16 +12,15 @@ class MissionViewModel: ObservableObject {
     
     @Published var missions = [
         Mission(id: UUID(),
-                isCompleted: false,
+                isCompleted: true,
                 title: "Hora do Foco",
                 description: "Concluiu seu primeiro Pomodoro."),
         Mission(id: UUID(),
-                isCompleted: false,
-                progressValues: [8, 20],
+                isCompleted: true,
                 title: "Primeiros Passos",
                 description: "Completou um total de 5 horas em foco."),
         Mission(id: UUID(),
-                isCompleted: false,
+                isCompleted: true,
                 title: "Um Dia de Cada Vez",
                 description: "Entre em foco por 5 dias seguidos."),
         Mission(id: UUID(),
@@ -45,21 +44,13 @@ class MissionViewModel: ObservableObject {
                 title: "Persistência",
                 description: "Entre em foco por 30 dias seguidos."),
         Mission(id: UUID(),
-                progressValues: [5, 10],
                 isCompleted: false,
-                title: "Pontapé Inicial",
-                description: "Conclua um total de 10 diferentes tarefas."),
-                
+                title: "Vida Adulta",
+                description: "Chegue ao nível Adulto do seu primeiro Ticker."),
         Mission(id: UUID(),
-                progressValues: [5, 25],
                 isCompleted: false,
-                title: "A Todo Vapor",
-                description: "Conclua um total de 25 diferentes tarefas."),
-        Mission(id: UUID(),
-                progressValues: [5, 50],
-                isCompleted: false,
-                title: "Muito a Fazer",
-                description: "Conclua um total de 50 diferentes tarefas.")
+                title: "Coleção Completa",
+                description: "Desbloqueie todos os Tickers.")
                 
     ]
         

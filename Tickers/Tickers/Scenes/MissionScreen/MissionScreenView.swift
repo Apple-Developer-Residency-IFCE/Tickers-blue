@@ -8,17 +8,26 @@ import SwiftUI
 struct MissionScreenView: View {
     @ObservedObject var missionViewModel: MissionViewModel
     
+    let columns = [GridItem(.fixed(335))]
+    
     var body: some View {
         NavigationView{
             VStack{
                 Divider()
-                Group{
-                    ForEach(missionViewModel.missions){ mission in
-                        MissionCellView(progressValues: mission.progressValues, title: mission.title, description: mission.description)
+                ScrollView{
+                    LazyVGrid(columns: columns, alignment: .center) {
+                        ForEach(missionViewModel.missions.filter { mission in return mission.isCompleted }) { mission in
+                            MissionCellView(mission: mission)
+                        }
                     }
-                    .padding(.bottom, 8)
-                }.padding(.horizontal)
-                Spacer()
+                    .padding(.bottom, 15)
+                    LazyVGrid(columns: columns, alignment: .center) {
+                        ForEach(missionViewModel.missions.filter { mission in return !mission.isCompleted }) { mission in
+                            MissionCellView(mission: mission)
+                        }
+                    }
+                }
+                
             }
                     .background(Color("LightGrey"))
                     .navigationCustom(leadingText: "Conquistas", trailingText: "")

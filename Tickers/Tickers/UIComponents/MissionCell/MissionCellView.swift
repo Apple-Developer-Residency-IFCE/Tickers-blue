@@ -25,20 +25,23 @@ struct MissionCellView: View {
         ZStack(alignment: .center) {
             RoundedRectangle(cornerRadius: 20)
                 .frame(width: 335, height: 88)
-                .foregroundColor(isCompleted ? .init("Achiev") : .red)
+                .foregroundColor(isCompleted ? .init("AchievUnlockColor") : .white)
             Group{
                 HStack {
-                    Image("Statelocked")
-                        .padding(.trailing, -10)
+                    Image(isCompleted ? "trophyUnlocked" : "trophyLocked")
+                        .resizable()
+                        .padding(.leading, 10)
+                        .frame(width: 92, height: 82)
+                        
                     VStack(alignment: .leading, spacing: 0){
                         Text(title)
                             .font(Font.tickerFont(font: .bold, size: .large))
-                            .foregroundColor(textColor)
+                            .foregroundColor(isCompleted ? .black : .init("AchievLockText"))
                         Text(description)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.trailing, 15)
                             .font(Font.tickerFont(font: .regular, size: .medium))
-                            .foregroundColor(textColor)
+                            .foregroundColor(isCompleted ? .black : .init("AchievLockText"))
                         
                         HStack(){
                             createProgressBar()
@@ -52,7 +55,7 @@ struct MissionCellView: View {
             .background{
                 Rectangle()
                     .frame(width: 307, height: 72)
-                    .foregroundColor(.red)
+                    .foregroundColor(isCompleted ? .init("AchievUnlockColor") : .white)
             }
         }
     }
@@ -79,7 +82,7 @@ struct MissionCellView: View {
 
 struct MissionCellView_Previews: PreviewProvider {
     static var previews: some View {
-        MissionCellView(progressValues: [3, 10],title: "Primeira Vez", description: "Finalize o seu primeiro pomodoro do dia e ganhe 50 xp")
+        MissionCellView(mission: Mission(id: UUID(), isCompleted: false, progressValues: [3, 10], title: "Primeira Vez", description: "Finalize o seu primeiro pomodoro do dia e ganhe 50 xp"))
     }
 }
             
