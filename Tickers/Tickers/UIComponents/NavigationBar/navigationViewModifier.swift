@@ -52,7 +52,7 @@ struct NavigationBarHomeModifier: ViewModifier {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink {
-                        MissionScreenView(missionViewModel: MissionViewModel())
+                        AchievementScreenView(achievementViewModel: AchievementViewModel())
                             .navigationBarBackButtonHidden(true)
                     } label: {
                         Image("ButtonMissoes")
