@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class HomeViewModel: ObservableObject {
+class TickerViewModel: ObservableObject {
     @Published var data = [
         Ticker(id: UUID(), title: "Hadinha", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 5, locked: false),
         Ticker(id: UUID(), title: "Hadinha", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: true),

@@ -5,8 +5,8 @@
 //
 
 import SwiftUI
-struct MissionScreenView: View {
-    @ObservedObject var missionViewModel: MissionViewModel
+struct AchievementScreenView: View {
+    @ObservedObject var achievementViewModel: AchievementViewModel
     
     let columns = [GridItem(.fixed(335))]
     
@@ -16,14 +16,14 @@ struct MissionScreenView: View {
                 Divider()
                 ScrollView{
                     LazyVGrid(columns: columns, alignment: .center) {
-                        ForEach(missionViewModel.missions.filter { mission in return mission.isCompleted }) { mission in
-                            MissionCellView(mission: mission)
+                        ForEach(achievementViewModel.achievements.filter { achievement in return achievement.isCompleted }) { achievement in
+                            AchievementCellView(achievement: achievement)
                         }
                     }
                     .padding(.bottom, 15)
                     LazyVGrid(columns: columns, alignment: .center) {
-                        ForEach(missionViewModel.missions.filter { mission in return !mission.isCompleted }) { mission in
-                            MissionCellView(mission: mission)
+                        ForEach(achievementViewModel.achievements.filter { achievement in return !achievement.isCompleted }) { achievement in
+                            AchievementCellView(achievement: achievement)
                         }
                     }
                 }
@@ -38,6 +38,6 @@ struct MissionScreenView: View {
 
 struct MissionScreenView_Previews: PreviewProvider {
     static var previews: some View {
-        MissionScreenView(missionViewModel: MissionViewModel())
+        AchievementScreenView(achievementViewModel: AchievementViewModel())
     }
 }

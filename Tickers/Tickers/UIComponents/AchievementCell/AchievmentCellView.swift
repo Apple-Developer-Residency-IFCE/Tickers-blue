@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct MissionCellView: View {
+struct AchievementCellView: View {
     
     var isCompleted: Bool = false
     var progressValues: [Int]?
     var title: String
     var description: String
     
-    init(mission: Mission) {
-        self.isCompleted = mission.isCompleted
-        self.progressValues = mission.progressValues
-        self.title = mission.title
-        self.description = mission.description
+    init(achievement: Achievement) {
+        self.isCompleted = achievement.isCompleted
+        self.progressValues = achievement.progressValues
+        self.title = achievement.title
+        self.description = achievement.description
     }
     
     var body: some View {
@@ -80,9 +80,9 @@ struct MissionCellView: View {
     }
 }
 
-struct MissionCellView_Previews: PreviewProvider {
+struct AchievementCellView_Previews: PreviewProvider {
     static var previews: some View {
-        MissionCellView(mission: Mission(id: UUID(), isCompleted: false, progressValues: [3, 10], title: "Primeira Vez", description: "Finalize o seu primeiro pomodoro do dia e ganhe 50 xp"))
+        AchievementCellView(achievement: Achievement(id: UUID(), isCompleted: false, progressValues: [3, 10], title: "Primeira Vez", description: "Finalize o seu primeiro pomodoro do dia e ganhe 50 xp"))
     }
 }
             

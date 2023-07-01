@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Mission: Identifiable{
+struct Achievement: Identifiable{
     let id: UUID
     var isCompleted: Bool
     var progressValues: [Int]?

@@ -50,14 +50,6 @@ struct NavigationBarHomeModifier: ViewModifier {
                 ToolbarItem(placement: .navigationBarLeading) {
                     NavigationBarTextView(leadingText, trailingText)
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink {
-                        MissionScreenView(missionViewModel: MissionViewModel())
-                            .navigationBarBackButtonHidden(true)
-                    } label: {
-                        Image("ButtonMissoes")
-                    }
-                }
             }
     }
 }

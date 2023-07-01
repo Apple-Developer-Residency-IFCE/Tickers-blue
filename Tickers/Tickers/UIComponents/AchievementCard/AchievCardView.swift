@@ -13,6 +13,12 @@ struct AchievCardView: View {
     let title:String
     let subtitle:String
     
+    init(achievement: Achievement) {
+        self.isLocked = !achievement.isCompleted
+        self.title = achievement.title
+        self.subtitle = achievement.description
+    }
+    
     var body: some View {
         VStack {
             AchievCard(isLocked: isLocked)
@@ -70,6 +76,6 @@ struct AchievCardView: View {
 
 struct AchievCardView_Previews: PreviewProvider {
     static var previews: some View {
-        AchievCardView(isLocked: true, title: "Hora do foco", subtitle: "Concluiu seu primeiro pomodoro")
+        AchievCardView(achievement: Achievement(id: UUID(), isCompleted: true, title: "Hora do foco", description: "Concluiu seu primeiro pomodoro"))
     }
 }

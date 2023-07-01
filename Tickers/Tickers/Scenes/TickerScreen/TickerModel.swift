@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Ticker {
+struct Ticker: Identifiable {
     var id: UUID
     var title: String
     var EggImg: String
