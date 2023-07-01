@@ -50,14 +50,6 @@ struct NavigationBarHomeModifier: ViewModifier {
                 ToolbarItem(placement: .navigationBarLeading) {
                     NavigationBarTextView(leadingText, trailingText)
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink {
-                        AchievementScreenView(achievementViewModel: AchievementViewModel())
-                            .navigationBarBackButtonHidden(true)
-                    } label: {
-                        Image("ButtonMissoes")
-                    }
-                }
             }
     }
 }

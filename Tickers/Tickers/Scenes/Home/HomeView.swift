@@ -22,14 +22,17 @@ struct HomeView: View {
                     .padding(.bottom, 40)
                 HStack {
                     Text("Escolha um Ticker para cuidar")
+                        .font(.tickerFont(font: .bold, size: .extraLarge))
                     Spacer()
                     NavigationLink {
                         TickerScreenView(viewModel: tickerViewModel)
                     } label: {
                         Text("Ver Tudo")
+                            .font(.tickerFont(font: .regular, size: .regular))
                     }
                     .padding(.trailing, 15)
                 }
+                .padding(.bottom, 30)
                 ScrollView(.horizontal){
                     LazyHGrid(rows: rows) {
                         ForEach(tickerViewModel.data) { ticker in
@@ -38,19 +41,20 @@ struct HomeView: View {
                         }
                     }
                 }
-                
-                Spacer()
-                
+                .padding(.bottom, 40)
                 HStack {
                     Text("Conquistas")
+                        .font(.tickerFont(font: .bold, size: .extraLarge))
                     Spacer()
                     NavigationLink {
                         TickerScreenView(viewModel: tickerViewModel)
                     } label: {
                         Text("Ver Tudo")
+                            .font(.tickerFont(font: .regular, size: .regular))
                     }
                     .padding(.trailing, 15)
                 }
+                .padding(.bottom, 30)
                 ScrollView(.horizontal){
                     LazyHGrid(rows: rows) {
                         ForEach(achievementViewModel.achievements) { achievement in
