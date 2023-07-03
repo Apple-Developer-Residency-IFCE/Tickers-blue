@@ -26,6 +26,7 @@ struct HomeView: View {
                     Spacer()
                     NavigationLink {
                         TickerScreenView(viewModel: tickerViewModel)
+                            .navigationBarBackButtonHidden(true)
                     } label: {
                         Text("Ver Tudo")
                             .font(.tickerFont(font: .regular, size: .regular))
@@ -47,7 +48,8 @@ struct HomeView: View {
                         .font(.tickerFont(font: .bold, size: .extraLarge))
                     Spacer()
                     NavigationLink {
-                        TickerScreenView(viewModel: tickerViewModel)
+                        AchievementScreenView(achievementViewModel: AchievementViewModel())
+                            .navigationBarBackButtonHidden(true)
                     } label: {
                         Text("Ver Tudo")
                             .font(.tickerFont(font: .regular, size: .regular))

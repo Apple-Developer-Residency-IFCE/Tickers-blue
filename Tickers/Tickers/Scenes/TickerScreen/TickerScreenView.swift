@@ -34,6 +34,7 @@ struct TickerScreenView: View {
                     .padding(.top, -9).padding(.horizontal, -30)
             }
         }
+        .navigationCustom(leadingText: "Escolha um ticker", trailingText: "")
     }
 }
 

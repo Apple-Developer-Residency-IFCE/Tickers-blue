@@ -47,6 +47,7 @@
 		C867C47E2A4254310035D757 /* AchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C867C47D2A4254310035D757 /* AchievementViewModel.swift */; };
 		DD0738562A4FACA600D681E1 /* SoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0738552A4FACA600D681E1 /* SoundViewModel.swift */; };
 		DD0738582A4FACD300D681E1 /* SoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0738572A4FACD300D681E1 /* SoundModel.swift */; };
+		DD07385A2A5376CA00D681E1 /* SoundCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0738592A5376CA00D681E1 /* SoundCardView.swift */; };
 		DDF8D9C02A4F8B2800FDAC81 /* TickerScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF8D9BF2A4F8B2800FDAC81 /* TickerScreenView.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		C867C47D2A4254310035D757 /* AchievementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementViewModel.swift; sourceTree = "<group>"; };
 		DD0738552A4FACA600D681E1 /* SoundViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundViewModel.swift; sourceTree = "<group>"; };
 		DD0738572A4FACD300D681E1 /* SoundModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundModel.swift; sourceTree = "<group>"; };
+		DD0738592A5376CA00D681E1 /* SoundCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCardView.swift; sourceTree = "<group>"; };
 		DDF8D9BF2A4F8B2800FDAC81 /* TickerScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 		3443B77D2A43918D00AA9460 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				DD0738592A5376CA00D681E1 /* SoundCardView.swift */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				C867C47E2A4254310035D757 /* AchievementViewModel.swift in Sources */,
 				646E1B852A2808E6004B4583 /* ButtonUp.swift in Sources */,
 				34626C8F2A300952004737E7 /* FocoView.swift in Sources */,
+				DD07385A2A5376CA00D681E1 /* SoundCardView.swift in Sources */,
 				34626C922A300A61004737E7 /* DefinitionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
