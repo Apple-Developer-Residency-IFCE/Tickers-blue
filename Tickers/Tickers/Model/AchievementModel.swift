@@ -7,13 +7,11 @@
 
 import SwiftUI
 
-struct Mission: Identifiable{
+struct Achievement: Identifiable{
     let id: UUID
-    var tasksCompleted: Int
-    var totalTasks: Int
+    var isCompleted: Bool
+    var progressValues: [Int]?
     var title: String
     var description: String
-    var color: Color
-    var background: Color
 }
 

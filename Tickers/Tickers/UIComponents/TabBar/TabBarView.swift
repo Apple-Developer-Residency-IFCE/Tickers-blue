@@ -105,6 +105,6 @@ struct TabBarView: View {
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView(home: HomeView(viewModel: HomeViewModel()), perfil: PerfilView())
+        TabBarView(home: HomeView(tickerViewModel: TickerViewModel(), achievementViewModel: AchievementViewModel()), perfil: PerfilView())
     }
 }

@@ -8,34 +8,70 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var viewModel: HomeViewModel
-
-    let columns = [
-        GridItem(.fixed(170)),
-        GridItem(.fixed(170)),
+    @ObservedObject var tickerViewModel: TickerViewModel
+    @ObservedObject var achievementViewModel: AchievementViewModel
+    
+    let rows = [
+        GridItem(.fixed(176))
     ]
     
     var body: some View {
         NavigationView{
-            
-            VStack(alignment: .leading){
+            VStack(alignment: .center) {
                 Divider()
-                Text("Seus Tickers")
-                    .padding(.top, 10)
-                    .padding(.leading, 38)
-                    .font(.tickerFont(font: .bold, size: .extraLarge)).foregroundColor(.blue)
-                ScrollView {
-                    LazyVGrid(columns: columns, alignment: .center) {
-                        ForEach(viewModel.data, id: \.id) { item in
-                            CardView(ticker: item).padding(.top, 10)
+                    .padding(.bottom, 40)
+                HStack {
+                    Text("Escolha um Ticker para cuidar")
+                        .font(.tickerFont(font: .bold, size: .extraLarge))
+                    Spacer()
+                    NavigationLink {
+                        TickerScreenView(viewModel: tickerViewModel)
+                            .navigationBarBackButtonHidden(true)
+                    } label: {
+                        Text("Ver Tudo")
+                            .font(.tickerFont(font: .regular, size: .regular))
+                    }
+                    .padding(.trailing, 15)
+                }
+                .padding(.bottom, 30)
+                ScrollView(.horizontal){
+                    LazyHGrid(rows: rows) {
+                        ForEach(tickerViewModel.data) { ticker in
+                            CardView(ticker: ticker)
+                                .padding(.trailing, 10)
                         }
-                    }.padding(.horizontal)
-                }.frame(minWidth: 440)
-                Divider()
-                    .padding(.top, -9).padding(.horizontal, -30)
-            }.navigationHome(leadingText: "Seja bem vindo(a),", trailingText:viewModel.name)
-                .background{
-                Color("GrayBackground").padding(.bottom, 10)
+                    }
+                }
+                .padding(.bottom, 40)
+                HStack {
+                    Text("Conquistas")
+                        .font(.tickerFont(font: .bold, size: .extraLarge))
+                    Spacer()
+                    NavigationLink {
+                        AchievementScreenView(achievementViewModel: AchievementViewModel())
+                            .navigationBarBackButtonHidden(true)
+                    } label: {
+                        Text("Ver Tudo")
+                            .font(.tickerFont(font: .regular, size: .regular))
+                    }
+                    .padding(.trailing, 15)
+                }
+                .padding(.bottom, 30)
+                ScrollView(.horizontal){
+                    LazyHGrid(rows: rows) {
+                        ForEach(achievementViewModel.achievements) { achievement in
+                            AchievCardView(achievement: achievement)
+                                .padding(.trailing, 10)
+                        }
+                    }
+                }
+                Spacer()
+            }
+            .navigationHome(leadingText: "Seja bem vindo(a),", trailingText: tickerViewModel.name)
+            .padding(.leading, 15)
+            .background{
+                Color("GrayBackground")
+                    .padding(.bottom, 10)
             }.padding(.top, 10)
         }
     }
@@ -43,7 +79,7 @@ struct HomeView: View {
 
 struct HomeTabBar: View {
     var body: some View {
-        TabBarView(home: HomeView(viewModel: HomeViewModel()), perfil: PerfilView())
+        TabBarView(home: HomeView(tickerViewModel: TickerViewModel(), achievementViewModel: AchievementViewModel()), perfil: PerfilView())
     }
 }
 

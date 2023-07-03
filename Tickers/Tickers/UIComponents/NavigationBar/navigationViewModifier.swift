@@ -18,7 +18,7 @@ struct NavigationBarCustomModifier: ViewModifier {
     }
     
     func body(content: Content) -> some View {
-        content
+        content.background(Color("GrayBackground"))
             .navigationBarBackButtonHidden(true)
             .toolbar{
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -49,14 +49,6 @@ struct NavigationBarHomeModifier: ViewModifier {
             .toolbar{
                 ToolbarItem(placement: .navigationBarLeading) {
                     NavigationBarTextView(leadingText, trailingText)
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink {
-                        MissionScreenView(missionViewModel: MissionViewModel())
-                            .navigationBarBackButtonHidden(true)
-                    } label: {
-                        Image("ButtonMissoes")
-                    }
                 }
             }
     }
