@@ -17,7 +17,10 @@ struct CardView: View {
     var pet = "BabyCat"
     var level = 1
     
-    init(ticker: Ticker){
+    var homeFrame: Bool
+    
+    
+    init(ticker: Ticker, homeFrame: Bool? = false){
 //        self.ticker  = ticker
         
         if(ticker.locked){
@@ -30,6 +33,7 @@ struct CardView: View {
         actualProgress = ticker.actualProgress
         title = ticker.title
         level = ticker.level
+        self.homeFrame = homeFrame!
     }
 
     var body: some View {
@@ -40,20 +44,20 @@ struct CardView: View {
                 EggCardView(pet: pet)
 
             }
-        }.frame(width: 160, height: 176)
-        
+        }.frame(width: homeFrame ? 148 : 160, height: 176)
             .background {
                 Color("whiteContainer")
-                    .cornerRadius(10)
+                    .cornerRadius(homeFrame ? 20 : 10)
             }
     }
 }
+
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
 //            CardView(locked: false, maxProgress: 10, actualProgress: 0, title: "Gaa", pet: "BabyCat", level: 1)
-            CardView(ticker: Ticker(id: UUID(), title: "Gaa", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: false))
+            CardView(ticker: Ticker(id: UUID(), title: "Gaa", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: false), homeFrame: true)
             CardView(ticker: Ticker(id: UUID(), title: "Gaa", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: true))
         }
         
