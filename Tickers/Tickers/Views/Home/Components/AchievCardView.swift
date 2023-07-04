@@ -42,7 +42,7 @@ struct AchievCardView: View {
                                 .font(Font.tickerFont(font: .bold, size: .regular))
                                 .foregroundColor(Color("AchievLockText"))
                             Text(subtitle)
-                                .font(Font.tickerFont(font: .regular, size: .small))
+                                .font(Font.tickerFont(font: .regular, size: .medium))
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(Color("AchievLockText"))
                         }
@@ -64,7 +64,7 @@ struct AchievCardView: View {
                             Text(title)
                                 .font(Font.tickerFont(font: .bold, size: .regular))
                             Text(subtitle)
-                                .font(Font.tickerFont(font: .regular, size: .small))
+                                .font(Font.tickerFont(font: .regular, size: .medium))
                                 .multilineTextAlignment(.center)
                         }
                         .padding(.bottom, 17)

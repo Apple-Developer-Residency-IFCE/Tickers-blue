@@ -37,7 +37,7 @@ struct HomeView: View {
                 ScrollView(.horizontal){
                     LazyHGrid(rows: rows) {
                         ForEach(tickerViewModel.data) { ticker in
-                            CardView(ticker: ticker)
+                            CardView(ticker: ticker, homeFrame: true)
                                 .padding(.trailing, 10)
                         }
                     }
