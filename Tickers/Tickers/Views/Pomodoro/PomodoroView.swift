@@ -107,7 +107,7 @@ struct PomodoroView: View {
                                 
                                 if #available(iOS 16.0, *) {
                                     DefinitionsView(isPresentingDefinition: $isPresentingDefinition)
-                                        .presentationDetents([.height(640)])
+                                        .presentationDetents([.height(320)])
                                 } else {
                                     DefinitionsView(isPresentingDefinition: $isPresentingDefinition)
                                 }
