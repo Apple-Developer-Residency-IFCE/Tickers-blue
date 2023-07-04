@@ -5,7 +5,7 @@
 //
 
 import SwiftUI
-struct AchievementScreenView: View {
+struct AchievementsView: View {
     @ObservedObject var achievementViewModel: AchievementViewModel
     
     let columns = [GridItem(.fixed(335))]
@@ -36,8 +36,8 @@ struct AchievementScreenView: View {
     }
 
 
-struct MissionScreenView_Previews: PreviewProvider {
+struct MissionsView_Previews: PreviewProvider {
     static var previews: some View {
-        AchievementScreenView(achievementViewModel: AchievementViewModel())
+        AchievementsView(achievementViewModel: AchievementViewModel())
     }
 }

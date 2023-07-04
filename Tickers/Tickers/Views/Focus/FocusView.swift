@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct FocoView: View {
-    @State var tomerBool = false
+struct FocusView: View {
+    @State var timerBool = false
     let customFont = Font.tickerFont(font: .bold, size: .xxxxl)
-    @Binding var isPresentingFoco: Bool
+    @Binding var isPresentingFocus: Bool
     @ObservedObject var viewModel: PomodoroViewModel
     
     var body: some View {
@@ -36,7 +36,7 @@ struct FocoView: View {
             }.toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Image("ButtonBack").onTapGesture {
-                        isPresentingFoco = false
+                        isPresentingFocus = false
                     }
                 }
             }
@@ -44,16 +44,16 @@ struct FocoView: View {
     }
 }
 
-fileprivate struct focoViewBinding: View {
-    @State var isPresentingFoco: Bool = true
+fileprivate struct FocusViewBinding: View {
+    @State var isPresentingFocus: Bool = true
     @State var timeRemaining: Int = 25*60
     var body: some View {
-        FocoView(isPresentingFoco: $isPresentingFoco, viewModel: PomodoroViewModel())
+        FocusView(isPresentingFocus: $isPresentingFocus, viewModel: PomodoroViewModel())
     }
 }
 
-struct FocoView_Previews: PreviewProvider {
+struct FocusView_Previews: PreviewProvider {
     static var previews: some View {
-        focoViewBinding()
+        FocusViewBinding()
     }
 }
