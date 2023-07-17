@@ -29,6 +29,8 @@ struct SoundScreenView: View {
                     Spacer()
                 }.navigationCustom(leadingText: "Pomodoro", trailingText: "")
             }
+        }.task {
+            try? await APICaller.shared.fetchSong()
         }
     }
 }
