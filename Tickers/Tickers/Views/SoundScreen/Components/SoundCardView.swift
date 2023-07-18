@@ -21,10 +21,6 @@ struct soundCardView: View {
             SoundButton(imageName: sound.running ? "Type=Pause" : "Type=Play" ) {
                 sound.running ? viewModel.stop(sound: sound.id): viewModel.play(sound: sound.id)
             }.padding(.trailing)
-            
-            SoundButton(imageName: sound.downloaded ? "Type=Cancel" : "Type=Download") {
-                sound.downloaded ? viewModel.remove(sound: sound.id) : viewModel.download(sound: sound.id)
-            }.padding(.trailing)
         }.background{
             Color.white
                 .cornerRadius(20)

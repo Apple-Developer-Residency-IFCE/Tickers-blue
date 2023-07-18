@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SoundScreenView: View {
     @ObservedObject var viewModel: SoundViewModel
+    @Binding var isPresentingSounds: Bool
     
     var body: some View {
         NavigationView {
@@ -27,7 +28,16 @@ struct SoundScreenView: View {
                         }
                     }
                     Spacer()
-                }.navigationCustom(leadingText: "Pomodoro", trailingText: "")
+                }
+            }.toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Image("ButtonBack").onTapGesture {
+                        isPresentingSounds = false
+                    }
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("Sons").font(.tickerFont(font: .bold, size: .xxxl))
+                }
             }
         }
     }
@@ -36,7 +46,7 @@ struct SoundScreenView: View {
 fileprivate struct SoundScreenBinding: View {
     @State var isPresentingSounds: Bool = true
     var body: some View {
-        SoundScreenView(viewModel: SoundViewModel())
+        SoundScreenView(viewModel: SoundViewModel(), isPresentingSounds: $isPresentingSounds)
     }
 }
 struct SoundScreenView_Previews: PreviewProvider {

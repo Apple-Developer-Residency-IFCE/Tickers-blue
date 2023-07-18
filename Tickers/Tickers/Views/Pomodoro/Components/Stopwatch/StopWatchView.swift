@@ -12,7 +12,6 @@ struct StopWatchView: View {
     @ObservedObject var viewModel: PomodoroViewModel
     
     @State private var currentState: PomodoroState = .work
-    @State private var isTimerRunning = false
     @State private var isBreakTimeStarted = false // Verificar se o tempo de descanso já iniciou
     @Binding var restTime: Bool
     
@@ -32,18 +31,22 @@ struct StopWatchView: View {
                             Image("ButtonReiniciar")
                         }.padding(10)
                         Button {
-                            if !isTimerRunning {
+                            if !viewModel.isRunning {
                                 startTimer()
+                                SoundPlayer.soundPlayer.play(path: nil)
                             } else {
                                 stopTimer()
+                                SoundPlayer.soundPlayer.stop()
                             }
                         } label: {
-                            if isTimerRunning {
+                            if viewModel.isRunning {
                                 Image("ButtonPause")
                                     .padding(.bottom, 10)
+                                
                             } else {
                                 Image("ButtonPlayStopWatch")
                                     .padding(.bottom, 10)
+                                
                             }
                         }.padding(10)
                         Button {
@@ -51,7 +54,6 @@ struct StopWatchView: View {
                         } label: {
                             Image("ButtonNext")
                         }.padding(10)
-//                            .disabled(currentState != .breakTime)
                         
                     }
                 }
@@ -62,7 +64,7 @@ struct StopWatchView: View {
         ) { _ in
             
             
-            if isTimerRunning && viewModel.timeRemaining > 0 {
+            if viewModel.isRunning && viewModel.timeRemaining > 0 {
                 viewModel.timeRemaining -= 1
                 if viewModel.timeRemaining <= 0 {
                     timerComplete()
@@ -71,9 +73,9 @@ struct StopWatchView: View {
         }
         .onChange(of: currentState) { newValue in
             if newValue == .work || newValue == .breakTime {
-                isTimerRunning = true
+                viewModel.isRunning = true
             } else {
-                isTimerRunning = false
+                viewModel.isRunning = false
             }
         }
     }
@@ -94,13 +96,13 @@ struct StopWatchView: View {
             timerComplete()
         } else {
             currentState = .work
-            isTimerRunning = true
+            viewModel.isRunning = true
         }
     }
     
     func stopTimer() {
         currentState = .pause
-        isTimerRunning = false
+        viewModel.isRunning = false
     }
     
     func skipBreak() {
@@ -109,13 +111,13 @@ struct StopWatchView: View {
             viewModel.timeRemaining = 25 * 60
             isBreakTimeStarted = false
             restTime = false
-            isTimerRunning = true
+            viewModel.isRunning = true
         } else if currentState == .work && !isBreakTimeStarted {
             currentState = .breakTime
             viewModel.timeRemaining = 5 * 60
             isBreakTimeStarted = true
             restTime = true
-            isTimerRunning = true
+            viewModel.isRunning = true
         }
     }
 

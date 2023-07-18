@@ -10,6 +10,6 @@ import SwiftUI
 struct Sound: Identifiable {
     let name: String
     let id: Int
-    var downloaded: Bool = false
     var running: Bool = false
+    var path: String
 }

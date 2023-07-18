@@ -124,7 +124,7 @@ struct PomodoroView: View {
                             }
                             .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
                             .fullScreenCover(isPresented: $isPresentingSounds) {
-                                SoundScreenView(viewModel: SoundViewModel())
+                                SoundScreenView(viewModel: SoundViewModel(), isPresentingSounds: $isPresentingSounds)
                             }
                             
                         }
