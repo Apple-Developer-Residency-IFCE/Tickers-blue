@@ -41,6 +41,8 @@
 		64D0A7982A27FA860074EF28 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0A7972A27FA860074EF28 /* CardView.swift */; };
 		64D0A79A2A27FEA40074EF28 /* EggCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0A7992A27FEA40074EF28 /* EggCardView.swift */; };
 		64D0A79C2A27FEB10074EF28 /* PetcardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D0A79B2A27FEB10074EF28 /* PetcardView.swift */; };
+		BA9120B52A68AF5B00C85B56 /* PopupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9120B42A68AF5B00C85B56 /* PopupsView.swift */; };
+		BAC1E04C2A67619F00306DEB /* PopupsPomodoro.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1E04B2A67619F00306DEB /* PopupsPomodoro.swift */; };
 		C867C46D2A39183F0035D757 /* AchievmentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C867C46C2A39183F0035D757 /* AchievmentCellView.swift */; };
 		C867C47C2A4123BC0035D757 /* AchievementScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C867C47B2A4123BC0035D757 /* AchievementScreenView.swift */; };
 		C867C47E2A4254310035D757 /* AchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C867C47D2A4254310035D757 /* AchievementViewModel.swift */; };
@@ -106,6 +108,8 @@
 		64D0A7972A27FA860074EF28 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		64D0A7992A27FEA40074EF28 /* EggCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggCardView.swift; sourceTree = "<group>"; };
 		64D0A79B2A27FEB10074EF28 /* PetcardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetcardView.swift; sourceTree = "<group>"; };
+		BA9120B42A68AF5B00C85B56 /* PopupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupsView.swift; sourceTree = "<group>"; };
+		BAC1E04B2A67619F00306DEB /* PopupsPomodoro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupsPomodoro.swift; sourceTree = "<group>"; };
 		C867C46C2A39183F0035D757 /* AchievmentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievmentCellView.swift; sourceTree = "<group>"; };
 		C867C47B2A4123BC0035D757 /* AchievementScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementScreenView.swift; sourceTree = "<group>"; };
 		C867C47D2A4254310035D757 /* AchievementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementViewModel.swift; sourceTree = "<group>"; };
@@ -337,6 +341,7 @@
 		64D0A7942A27F5F60074EF28 /* GlobalComponents */ = {
 			isa = PBXGroup;
 			children = (
+				BAC1E04A2A67617600306DEB /* Popups */,
 				345E23992A3005D300AEF1CB /* NavigationBar */,
 				345E23912A3004B800AEF1CB /* Button */,
 				345E23962A30055600AEF1CB /* TabBarView.swift */,
@@ -351,6 +356,15 @@
 				345E236C2A2FE15A00AEF1CB /* CircularProgressView.swift */,
 			);
 			path = Stopwatch;
+			sourceTree = "<group>";
+		};
+		BAC1E04A2A67617600306DEB /* Popups */ = {
+			isa = PBXGroup;
+			children = (
+				BAC1E04B2A67619F00306DEB /* PopupsPomodoro.swift */,
+				BA9120B42A68AF5B00C85B56 /* PopupsView.swift */,
+			);
+			path = Popups;
 			sourceTree = "<group>";
 		};
 		C867C47A2A41237C0035D757 /* Achievement */ = {
@@ -584,6 +598,7 @@
 				64D0A79A2A27FEA40074EF28 /* EggCardView.swift in Sources */,
 				DD0738582A4FACD300D681E1 /* SoundModel.swift in Sources */,
 				64D0A7982A27FA860074EF28 /* CardView.swift in Sources */,
+				BA9120B52A68AF5B00C85B56 /* PopupsView.swift in Sources */,
 				646E1B872A280A64004B4583 /* ButtonReturn.swift in Sources */,
 				345E239F2A30066200AEF1CB /* HomeView.swift in Sources */,
 				340FA70B2A4271D1000232E0 /* PomodoroViewModel.swift in Sources */,
@@ -606,6 +621,7 @@
 				345E236F2A2FE15A00AEF1CB /* StopWatchView.swift in Sources */,
 				C867C47E2A4254310035D757 /* AchievementViewModel.swift in Sources */,
 				646E1B852A2808E6004B4583 /* ButtonUp.swift in Sources */,
+				BAC1E04C2A67619F00306DEB /* PopupsPomodoro.swift in Sources */,
 				34626C8F2A300952004737E7 /* FocusView.swift in Sources */,
 				DD07385A2A5376CA00D681E1 /* SoundCardView.swift in Sources */,
 				34626C922A300A61004737E7 /* DefinitionsView.swift in Sources */,

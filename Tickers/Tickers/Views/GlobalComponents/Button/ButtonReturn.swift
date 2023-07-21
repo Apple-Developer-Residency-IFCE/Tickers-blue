@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct ButtonReturn: View {
+    
+    var buttonText: String = "Não, me leve de volta!"
+    @State var btnReturn : Bool = false
+    
     var body: some View {
         VStack {
             Button(action: {
-                print("clicked")
+                btnReturn = true
             }){
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(.purple, lineWidth: 2)
-                    .frame(width: 200, height: 20)
-                    .overlay(Text("Não, me leve de volta!"))
-                    .foregroundColor(.purple)
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(.blue, lineWidth: 2)
+                    .frame(width: 200, height: 30)
+                    .overlay(Text(buttonText))
+                    .font(Font.tickerFont(font: .bold, size: .regular))
+                    .foregroundColor(Color("BlueFoco"))
             }
         }
     }
