@@ -13,13 +13,15 @@ struct PetCardView: View {
     @State var title = "Haddinha"
     var pet = "BabyCat"
     var level = "Lvl 1"
+    var isSelected = false
     
-    init(_ maxProgress: Int = 40, _ actualProgress: Int = 10, _ title: String = "Haddinha", _ pet: String = "BabyCat", _ level: String = "Lvl 1") {
+    init(_ maxProgress: Int = 40, _ actualProgress: Int = 10, _ title: String = "Haddinha", _ pet: String = "BabyCat", _ level: String = "Lvl 1", _ isSelected: Bool = false) {
         self.maxProgress = maxProgress
         self.actualProgress = actualProgress
         self.title = title
         self.pet = pet
         self.level = level
+        self.isSelected = isSelected
     }
     
     var body: some View {
@@ -58,12 +60,16 @@ struct CardPetView_Previews: PreviewProvider {
     static var previews: some View {
         PetCardView()
             .background {
-                Color
-                    .blue
-                    .opacity(0.1)
-                    .cornerRadius(10)
-                    .shadow(radius: 5)
-                    .frame(width: 160, height: 176)
+                ZStack{
+                    Color
+                        .blue
+                        .opacity(0.1)
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
+                        .frame(width: 160, height: 176)
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(.blue, lineWidth: 3)
+                }
             }
     }
 }

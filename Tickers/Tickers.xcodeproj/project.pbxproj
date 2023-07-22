@@ -47,6 +47,10 @@
 		DD0738562A4FACA600D681E1 /* SoundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0738552A4FACA600D681E1 /* SoundViewModel.swift */; };
 		DD0738582A4FACD300D681E1 /* SoundModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0738572A4FACD300D681E1 /* SoundModel.swift */; };
 		DD07385A2A5376CA00D681E1 /* SoundCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0738592A5376CA00D681E1 /* SoundCardView.swift */; };
+		DDED2CA32A6B314E0057FB2C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDED2CA12A6B314E0057FB2C /* DataModel.xcdatamodeld */; };
+		DDED2CA62A6B319A0057FB2C /* TickerDB+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED2CA42A6B319A0057FB2C /* TickerDB+CoreDataClass.swift */; };
+		DDED2CA72A6B319A0057FB2C /* TickerDB+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED2CA52A6B319A0057FB2C /* TickerDB+CoreDataProperties.swift */; };
+		DDED2CA92A6B31B50057FB2C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED2CA82A6B31B50057FB2C /* DataController.swift */; };
 		DDF8D9C02A4F8B2800FDAC81 /* TickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF8D9BF2A4F8B2800FDAC81 /* TickersView.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +116,10 @@
 		DD0738552A4FACA600D681E1 /* SoundViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundViewModel.swift; sourceTree = "<group>"; };
 		DD0738572A4FACD300D681E1 /* SoundModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundModel.swift; sourceTree = "<group>"; };
 		DD0738592A5376CA00D681E1 /* SoundCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCardView.swift; sourceTree = "<group>"; };
+		DDED2CA22A6B314E0057FB2C /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		DDED2CA42A6B319A0057FB2C /* TickerDB+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TickerDB+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DDED2CA52A6B319A0057FB2C /* TickerDB+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TickerDB+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DDED2CA82A6B31B50057FB2C /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		DDF8D9BF2A4F8B2800FDAC81 /* TickersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -234,6 +242,7 @@
 				3441CC172A3D10AC004A2D4C /* TickerModel.swift */,
 				34626C962A31335B004737E7 /* AchievementModel.swift */,
 				DD0738572A4FACD300D681E1 /* SoundModel.swift */,
+				DDED2CA82A6B31B50057FB2C /* DataController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -250,6 +259,8 @@
 		642697E82A1D797700A7C788 = {
 			isa = PBXGroup;
 			children = (
+				DDED2CA42A6B319A0057FB2C /* TickerDB+CoreDataClass.swift */,
+				DDED2CA52A6B319A0057FB2C /* TickerDB+CoreDataProperties.swift */,
 				642697F32A1D797700A7C788 /* Tickers */,
 				642698042A1D797800A7C788 /* TickersTests */,
 				6426980E2A1D797800A7C788 /* TickersUITests */,
@@ -277,6 +288,7 @@
 				642697F42A1D797700A7C788 /* TickersApp.swift */,
 				6492E9A42A200A7000F608BB /* Info.plist */,
 				642697FA2A1D797800A7C788 /* Preview Content */,
+				DDED2CA12A6B314E0057FB2C /* DataModel.xcdatamodeld */,
 			);
 			path = Tickers;
 			sourceTree = "<group>";
@@ -571,12 +583,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDED2CA72A6B319A0057FB2C /* TickerDB+CoreDataProperties.swift in Sources */,
 				64D0A79C2A27FEB10074EF28 /* PetcardView.swift in Sources */,
 				6427D6E62A2560C700F66288 /* SoundScreenView.swift in Sources */,
 				3455BC462A3A776E004A430A /* NavigationBarTextView.swift in Sources */,
 				6492E9B62A202A7600F608BB /* TickerFont.swift in Sources */,
 				3441CC182A3D10AC004A2D4C /* TickerModel.swift in Sources */,
 				C867C46D2A39183F0035D757 /* AchievmentCellView.swift in Sources */,
+				DDED2CA92A6B31B50057FB2C /* DataController.swift in Sources */,
 				DDF8D9C02A4F8B2800FDAC81 /* TickersView.swift in Sources */,
 				6488087E2A26CD630031D2BA /* LvlProgressBarView.swift in Sources */,
 				345E23952A30054000AEF1CB /* TextFieldView.swift in Sources */,
@@ -590,6 +604,7 @@
 				642E72962A2A9CF7008A6F21 /* RadioButtonView.swift in Sources */,
 				DD0738562A4FACA600D681E1 /* SoundViewModel.swift in Sources */,
 				345E23972A30055600AEF1CB /* TabBarView.swift in Sources */,
+				DDED2CA62A6B319A0057FB2C /* TickerDB+CoreDataClass.swift in Sources */,
 				3455BC432A3A75C7004A430A /* navigationViewModifier.swift in Sources */,
 				345E23A32A3006E700AEF1CB /* PerfilView.swift in Sources */,
 				3441CC1A2A3D3003004A2D4C /* TickerViewModel.swift in Sources */,
@@ -607,6 +622,7 @@
 				C867C47E2A4254310035D757 /* AchievementViewModel.swift in Sources */,
 				646E1B852A2808E6004B4583 /* ButtonUp.swift in Sources */,
 				34626C8F2A300952004737E7 /* FocusView.swift in Sources */,
+				DDED2CA32A6B314E0057FB2C /* DataModel.xcdatamodeld in Sources */,
 				DD07385A2A5376CA00D681E1 /* SoundCardView.swift in Sources */,
 				34626C922A300A61004737E7 /* DefinitionsView.swift in Sources */,
 			);
@@ -939,6 +955,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DDED2CA12A6B314E0057FB2C /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DDED2CA22A6B314E0057FB2C /* DataModel.xcdatamodel */,
+			);
+			currentVersion = DDED2CA22A6B314E0057FB2C /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 642697E92A1D797700A7C788 /* Project object */;
 }

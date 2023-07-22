@@ -38,9 +38,13 @@ struct HomeView: View {
                     LazyHGrid(rows: rows) {
                         ForEach(tickerViewModel.data) { ticker in
                             CardView(ticker: ticker, homeFrame: true)
-                                .padding(.trailing, 10)
+                                .onTapGesture {
+                                    tickerViewModel.selectTicker(id: ticker.id)
+                                }
+                                .padding(.horizontal, 5)
                         }
                     }
+                    .padding(.vertical, 10)
                 }
                 .padding(.bottom, 40)
                 HStack {

@@ -16,6 +16,7 @@ struct CardView: View {
     var title = "Haddinha"
     var pet = "BabyCat"
     var level = 1
+    var isSelected = false
     
     var homeFrame: Bool
     
@@ -33,6 +34,8 @@ struct CardView: View {
         actualProgress = ticker.actualProgress
         title = ticker.title
         level = ticker.level
+        isSelected = ticker.isSelected
+        
         self.homeFrame = homeFrame!
     }
 
@@ -44,10 +47,16 @@ struct CardView: View {
                 EggCardView(pet: pet)
 
             }
-        }.frame(width: homeFrame ? 148 : 160, height: 176)
+        }
+        .frame(width: homeFrame ? 148 : 160, height: 176)
             .background {
                 Color("whiteContainer")
                     .cornerRadius(homeFrame ? 20 : 10)
+                
+                if isSelected {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(.blue, lineWidth: 3)
+                }
             }
     }
 }
@@ -57,8 +66,8 @@ struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
 //            CardView(locked: false, maxProgress: 10, actualProgress: 0, title: "Gaa", pet: "BabyCat", level: 1)
-            CardView(ticker: Ticker(id: UUID(), title: "Gaa", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: false), homeFrame: true)
-            CardView(ticker: Ticker(id: UUID(), title: "Gaa", EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: true))
+            CardView(ticker: Ticker(id: UUID(), title: "Gaa", xp: 0, EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: false, isSelected: true), homeFrame: true)
+            CardView(ticker: Ticker(id: UUID(), title: "Gaa", xp: 0, EggImg: "blueEgg", TickerImg: "BabyCat", level: 1, maxProgress: 10, actualProgress: 0, locked: true, isSelected: false))
         }
         
     }
