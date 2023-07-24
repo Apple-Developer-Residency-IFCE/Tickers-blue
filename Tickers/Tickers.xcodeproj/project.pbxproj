@@ -52,6 +52,7 @@
 		DDED2CA72A6B319A0057FB2C /* TickerDB+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED2CA52A6B319A0057FB2C /* TickerDB+CoreDataProperties.swift */; };
 		DDED2CA92A6B31B50057FB2C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED2CA82A6B31B50057FB2C /* DataController.swift */; };
 		DDF8D9C02A4F8B2800FDAC81 /* TickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF8D9BF2A4F8B2800FDAC81 /* TickersView.swift */; };
+		DDFCC00D2A6F45AA0071EF63 /* AchievementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCC00C2A6F45AA0071EF63 /* AchievementsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		DDED2CA52A6B319A0057FB2C /* TickerDB+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TickerDB+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DDED2CA82A6B31B50057FB2C /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		DDF8D9BF2A4F8B2800FDAC81 /* TickersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersView.swift; sourceTree = "<group>"; };
+		DDFCC00C2A6F45AA0071EF63 /* AchievementsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 				34626C962A31335B004737E7 /* AchievementModel.swift */,
 				DD0738572A4FACD300D681E1 /* SoundModel.swift */,
 				DDED2CA82A6B31B50057FB2C /* DataController.swift */,
+				DDFCC00C2A6F45AA0071EF63 /* AchievementsManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				345E23952A30054000AEF1CB /* TextFieldView.swift in Sources */,
 				642697F52A1D797700A7C788 /* TickersApp.swift in Sources */,
 				64D0A79A2A27FEA40074EF28 /* EggCardView.swift in Sources */,
+				DDFCC00D2A6F45AA0071EF63 /* AchievementsManager.swift in Sources */,
 				DD0738582A4FACD300D681E1 /* SoundModel.swift in Sources */,
 				64D0A7982A27FA860074EF28 /* CardView.swift in Sources */,
 				646E1B872A280A64004B4583 /* ButtonReturn.swift in Sources */,

@@ -1,19 +1,8 @@
 import SwiftUI
 import Combine
 
-
-enum PomodoroState {
-    case work
-    case breakTime
-    case pause
-}
-
 struct StopWatchView: View {
     @ObservedObject var viewModel: PomodoroViewModel
-    
-    @State private var currentState: PomodoroState = .work
-    @State private var isTimerRunning = false
-    @State private var isBreakTimeStarted = false // Verificar se o tempo de descanso já iniciou
     @Binding var restTime: Bool
     
     var body: some View {
@@ -27,18 +16,19 @@ struct StopWatchView: View {
                         .bold().padding(.top, 40)
                     HStack {
                         Button {
-                            resetTimer()
+                            viewModel.resetTimer(restTime: &restTime)
                         } label: {
                             Image("ButtonReiniciar")
                         }.padding(10)
                         Button {
-                            if !isTimerRunning {
-                                startTimer()
+                            if !viewModel.isTimerRunning {
+                                viewModel.startTimer(restTime: &restTime)
+                                
                             } else {
-                                stopTimer()
+                                viewModel.stopTimer()
                             }
                         } label: {
-                            if isTimerRunning {
+                            if viewModel.isTimerRunning {
                                 Image("ButtonPause")
                                     .padding(.bottom, 10)
                             } else {
@@ -47,7 +37,7 @@ struct StopWatchView: View {
                             }
                         }.padding(10)
                         Button {
-                            skipBreak()
+                            viewModel.skipBreak(restTime: &restTime)
                         } label: {
                             Image("ButtonNext")
                         }.padding(10)
@@ -60,77 +50,20 @@ struct StopWatchView: View {
         .onReceive(
             viewModel.timer
         ) { _ in
-            
-            
-            if isTimerRunning && viewModel.timeRemaining > 0 {
-                viewModel.timeRemaining -= 1
-                if viewModel.timeRemaining <= 0 {
-                    timerComplete()
-                }
-            }
+            print("Rodando")
+            viewModel.runTimer(restTime: &restTime)
         }
-        .onChange(of: currentState) { newValue in
+        .onChange(of: viewModel.currentState) { newValue in
             if newValue == .work || newValue == .breakTime {
-                isTimerRunning = true
+                viewModel.isTimerRunning = true
             } else {
-                isTimerRunning = false
+                viewModel.isTimerRunning = false
             }
         }
     }
     
     var progress: Double {
         Double(viewModel.timeRemaining) / Double(25 * 60)
-    }
-    
-    func resetTimer() {
-        currentState = .work
-        viewModel.timeRemaining = 25 * 60
-        isBreakTimeStarted = false
-        restTime = false
-    }
-    
-    func startTimer() {
-        if viewModel.timeRemaining <= 0 {
-            timerComplete()
-        } else {
-            currentState = .work
-            isTimerRunning = true
-        }
-    }
-    
-    func stopTimer() {
-        currentState = .pause
-        isTimerRunning = false
-    }
-    
-    func skipBreak() {
-        if currentState == .breakTime {
-            currentState = .work
-            viewModel.timeRemaining = 25 * 60
-            isBreakTimeStarted = false
-            restTime = false
-            isTimerRunning = true
-        } else if currentState == .work && !isBreakTimeStarted {
-            currentState = .breakTime
-            viewModel.timeRemaining = 5 * 60
-            isBreakTimeStarted = true
-            restTime = true
-            isTimerRunning = true
-        }
-    }
-
-    func timerComplete() {
-        if currentState == .work {
-            currentState = .breakTime
-            viewModel.timeRemaining = 5 * 60
-            isBreakTimeStarted = true
-            restTime = true
-        } else if currentState == .breakTime {
-            currentState = .work
-            viewModel.timeRemaining = 25 * 60
-            isBreakTimeStarted = false
-            restTime = false
-        }
     }
 }
 
