@@ -10,14 +10,16 @@ import AVFoundation
 
 class SoundPlayer {
     static let soundPlayer: SoundPlayer = SoundPlayer()
+    
     var audioPlayer: AVAudioPlayer?
+    
     func play(path: URL?){
         do {
             if(path != nil){
                 audioPlayer = try AVAudioPlayer(contentsOf: path!)
             }
             audioPlayer?.play()
-            audioPlayer?.numberOfLoops = 100
+            audioPlayer?.numberOfLoops = -1
             
         }catch {
             print("Deu ruim")

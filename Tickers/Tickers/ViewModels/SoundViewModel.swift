@@ -28,7 +28,7 @@ class SoundViewModel: ObservableObject {
         sounds[id].running.toggle()
         runningSound = id
         
-        guard let path = Bundle.main.path(forResource: sounds[id].path, ofType:"mp3") else {
+        guard let path = Bundle.main.path(forResource: sounds[id].path, ofType:"wav") else {
             return
         }
         let url = URL(fileURLWithPath: path)
