@@ -53,6 +53,7 @@ class PomodoroViewModel: ObservableObject {
         
         if isTimerRunning && timeRemaining > 0 {
             timeRemaining -= 1
+            AchievementsManager.shared.addTime()
             if timeRemaining <= 0 {
                 timerComplete(restTime: &restTime)
             }

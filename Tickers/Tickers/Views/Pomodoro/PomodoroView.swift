@@ -25,6 +25,9 @@ struct PomodoroView: View {
     @State var isPresentingSounds: Bool = false
     @State var isPresentingDefinition: Bool = false
     
+    @Environment(\.scenePhase) var scenePhase
+    @State var backgroundDate: Date?
+    
     var body: some View {
         NavigationView{
             VStack {
@@ -148,6 +151,15 @@ struct PomodoroView: View {
                 }
             }
         }
+        .onChange(of: scenePhase, perform: { scenePhase in
+            if scenePhase == .background {
+                print("teste")
+                backgroundDate = Date()
+            } else if scenePhase == .active {
+                let timePassed = Date().timeIntervalSince(_: backgroundDate ?? Date())
+                print("TYeste")
+            }
+        })
     }
     
     fileprivate struct pomodoroBinding: View {

@@ -50,7 +50,6 @@ struct StopWatchView: View {
         .onReceive(
             viewModel.timer
         ) { _ in
-            print("Rodando")
             viewModel.runTimer(restTime: &restTime)
         }
         .onChange(of: viewModel.currentState) { newValue in

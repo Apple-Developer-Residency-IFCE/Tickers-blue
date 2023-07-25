@@ -53,6 +53,8 @@
 		DDED2CA92A6B31B50057FB2C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED2CA82A6B31B50057FB2C /* DataController.swift */; };
 		DDF8D9C02A4F8B2800FDAC81 /* TickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF8D9BF2A4F8B2800FDAC81 /* TickersView.swift */; };
 		DDFCC00D2A6F45AA0071EF63 /* AchievementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCC00C2A6F45AA0071EF63 /* AchievementsManager.swift */; };
+		DDFCC0102A6F4A840071EF63 /* UserStats+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCC00E2A6F4A840071EF63 /* UserStats+CoreDataClass.swift */; };
+		DDFCC0112A6F4A840071EF63 /* UserStats+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCC00F2A6F4A840071EF63 /* UserStats+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,8 @@
 		DDED2CA82A6B31B50057FB2C /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		DDF8D9BF2A4F8B2800FDAC81 /* TickersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersView.swift; sourceTree = "<group>"; };
 		DDFCC00C2A6F45AA0071EF63 /* AchievementsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsManager.swift; sourceTree = "<group>"; };
+		DDFCC00E2A6F4A840071EF63 /* UserStats+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserStats+CoreDataClass.swift"; path = "Tickers/Models/UserStats+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DDFCC00F2A6F4A840071EF63 /* UserStats+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserStats+CoreDataProperties.swift"; path = "Tickers/Models/UserStats+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,8 +248,8 @@
 				3441CC172A3D10AC004A2D4C /* TickerModel.swift */,
 				34626C962A31335B004737E7 /* AchievementModel.swift */,
 				DD0738572A4FACD300D681E1 /* SoundModel.swift */,
-				DDED2CA82A6B31B50057FB2C /* DataController.swift */,
 				DDFCC00C2A6F45AA0071EF63 /* AchievementsManager.swift */,
+				DDED2CA82A6B31B50057FB2C /* DataController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,6 +266,8 @@
 		642697E82A1D797700A7C788 = {
 			isa = PBXGroup;
 			children = (
+				DDFCC00E2A6F4A840071EF63 /* UserStats+CoreDataClass.swift */,
+				DDFCC00F2A6F4A840071EF63 /* UserStats+CoreDataProperties.swift */,
 				DDED2CA42A6B319A0057FB2C /* TickerDB+CoreDataClass.swift */,
 				DDED2CA52A6B319A0057FB2C /* TickerDB+CoreDataProperties.swift */,
 				642697F32A1D797700A7C788 /* Tickers */,
@@ -601,6 +607,7 @@
 				64D0A79A2A27FEA40074EF28 /* EggCardView.swift in Sources */,
 				DDFCC00D2A6F45AA0071EF63 /* AchievementsManager.swift in Sources */,
 				DD0738582A4FACD300D681E1 /* SoundModel.swift in Sources */,
+				DDFCC0112A6F4A840071EF63 /* UserStats+CoreDataProperties.swift in Sources */,
 				64D0A7982A27FA860074EF28 /* CardView.swift in Sources */,
 				646E1B872A280A64004B4583 /* ButtonReturn.swift in Sources */,
 				345E239F2A30066200AEF1CB /* HomeView.swift in Sources */,
@@ -608,6 +615,7 @@
 				642E72962A2A9CF7008A6F21 /* RadioButtonView.swift in Sources */,
 				DD0738562A4FACA600D681E1 /* SoundViewModel.swift in Sources */,
 				345E23972A30055600AEF1CB /* TabBarView.swift in Sources */,
+				DDFCC0102A6F4A840071EF63 /* UserStats+CoreDataClass.swift in Sources */,
 				DDED2CA62A6B319A0057FB2C /* TickerDB+CoreDataClass.swift in Sources */,
 				3455BC432A3A75C7004A430A /* navigationViewModifier.swift in Sources */,
 				345E23A32A3006E700AEF1CB /* PerfilView.swift in Sources */,

@@ -40,6 +40,7 @@ struct HomeView: View {
                             CardView(ticker: ticker, homeFrame: true)
                                 .onTapGesture {
                                     tickerViewModel.selectTicker(id: ticker.id)
+                                    AchievementsManager.shared.addTime()
                                 }
                                 .padding(.horizontal, 5)
                         }
