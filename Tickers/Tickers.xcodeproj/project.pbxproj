@@ -23,6 +23,11 @@
 		34626C922A300A61004737E7 /* DefinitionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34626C912A300A61004737E7 /* DefinitionsView.swift */; };
 		34626C972A31335B004737E7 /* AchievementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34626C962A31335B004737E7 /* AchievementModel.swift */; };
 		34626C992A31337D004737E7 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34626C982A31337D004737E7 /* NavigationBar.swift */; };
+		346C0A592A660BB30042C9DD /* SoundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346C0A582A660BB30042C9DD /* SoundHelper.swift */; };
+		346C0A7E2A688E4F0042C9DD /* tempestade.wav in Resources */ = {isa = PBXBuildFile; fileRef = 346C0A7A2A688E4F0042C9DD /* tempestade.wav */; };
+		346C0A7F2A688E4F0042C9DD /* agua.wav in Resources */ = {isa = PBXBuildFile; fileRef = 346C0A7B2A688E4F0042C9DD /* agua.wav */; };
+		346C0A802A688E4F0042C9DD /* chuva.wav in Resources */ = {isa = PBXBuildFile; fileRef = 346C0A7C2A688E4F0042C9DD /* chuva.wav */; };
+		346C0A812A688E4F0042C9DD /* Lo-Fi.wav in Resources */ = {isa = PBXBuildFile; fileRef = 346C0A7D2A688E4F0042C9DD /* Lo-Fi.wav */; };
 		35B5C9D02A4CE6430088DF6F /* AchievCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B5C9CF2A4CE6430088DF6F /* AchievCardView.swift */; };
 		642697F52A1D797700A7C788 /* TickersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642697F42A1D797700A7C788 /* TickersApp.swift */; };
 		642697F92A1D797800A7C788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 642697F82A1D797800A7C788 /* Assets.xcassets */; };
@@ -84,6 +89,11 @@
 		34626C912A300A61004737E7 /* DefinitionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionsView.swift; sourceTree = "<group>"; };
 		34626C962A31335B004737E7 /* AchievementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementModel.swift; sourceTree = "<group>"; };
 		34626C982A31337D004737E7 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		346C0A582A660BB30042C9DD /* SoundHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundHelper.swift; sourceTree = "<group>"; };
+		346C0A7A2A688E4F0042C9DD /* tempestade.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tempestade.wav; sourceTree = "<group>"; };
+		346C0A7B2A688E4F0042C9DD /* agua.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = agua.wav; sourceTree = "<group>"; };
+		346C0A7C2A688E4F0042C9DD /* chuva.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = chuva.wav; sourceTree = "<group>"; };
+		346C0A7D2A688E4F0042C9DD /* Lo-Fi.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Lo-Fi.wav"; sourceTree = "<group>"; };
 		35B5C9CF2A4CE6430088DF6F /* AchievCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievCardView.swift; sourceTree = "<group>"; };
 		642697F12A1D797700A7C788 /* Tickers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tickers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		642697F42A1D797700A7C788 /* TickersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersApp.swift; sourceTree = "<group>"; };
@@ -241,10 +251,22 @@
 		34626C9A2A313496004737E7 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				346C0A712A673A980042C9DD /* sounds */,
 				345E23902A30046300AEF1CB /* TickerFont */,
 				642697F82A1D797800A7C788 /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		346C0A712A673A980042C9DD /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				346C0A7B2A688E4F0042C9DD /* agua.wav */,
+				346C0A7C2A688E4F0042C9DD /* chuva.wav */,
+				346C0A7D2A688E4F0042C9DD /* Lo-Fi.wav */,
+				346C0A7A2A688E4F0042C9DD /* tempestade.wav */,
+			);
+			path = sounds;
 			sourceTree = "<group>";
 		};
 		642697E82A1D797700A7C788 = {
@@ -270,6 +292,7 @@
 		642697F32A1D797700A7C788 /* Tickers */ = {
 			isa = PBXGroup;
 			children = (
+				346C0A582A660BB30042C9DD /* SoundHelper.swift */,
 				DD07385B2A53904800D681E1 /* Views */,
 				DD07385D2A53946100D681E1 /* ViewModels */,
 				34626C932A300A6B004737E7 /* Models */,
@@ -543,7 +566,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				346C0A7F2A688E4F0042C9DD /* agua.wav in Resources */,
 				642697FC2A1D797800A7C788 /* Preview Assets.xcassets in Resources */,
+				346C0A7E2A688E4F0042C9DD /* tempestade.wav in Resources */,
+				346C0A802A688E4F0042C9DD /* chuva.wav in Resources */,
+				346C0A812A688E4F0042C9DD /* Lo-Fi.wav in Resources */,
 				6492E9B22A201FB100F608BB /* Nunito-Bold.ttf in Resources */,
 				6492E9B42A20207400F608BB /* Nunito-Regular.ttf in Resources */,
 				642697F92A1D797800A7C788 /* Assets.xcassets in Resources */,
@@ -602,6 +629,7 @@
 				35B5C9D02A4CE6430088DF6F /* AchievCardView.swift in Sources */,
 				345E23A82A30071400AEF1CB /* PomodoroView.swift in Sources */,
 				345E236E2A2FE15A00AEF1CB /* CircularProgressView.swift in Sources */,
+				346C0A592A660BB30042C9DD /* SoundHelper.swift in Sources */,
 				646E1B872A280A64004B4583 /* ButtonReturn.swift in Sources */,
 				345E236F2A2FE15A00AEF1CB /* StopWatchView.swift in Sources */,
 				C867C47E2A4254310035D757 /* AchievementViewModel.swift in Sources */,

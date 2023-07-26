@@ -12,6 +12,7 @@ class PomodoroViewModel: ObservableObject {
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     @Published var timeRemaining = 25 * 60
+    @Published var isRunning: Bool = false
     
     func minutes() -> String{
         return String(format: "%02d", self.timeRemaining/60)
