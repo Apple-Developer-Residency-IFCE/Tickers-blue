@@ -30,11 +30,8 @@ struct DefinitionsView: View {
                 
             }
             Divider()
-            SliderCustom(timerValue: $pomodoroTimerValue, maxValue: 10, minValue: 0, title: "Mozinho")
-            SliderCustom(timerValue: $timeBetweenPomodoroValue, maxValue: 50, minValue: 15, posFix: "min", title: "Pomodoros até a pausa")
-            SliderCustom(timerValue: $shortRest, maxValue: 10, minValue: 4, posFix: "min", title: "Pomodoros até a pausa")
-            SliderCustom(timerValue: $longRest, maxValue: 30, minValue: 15, posFix: "min", title: "Pomodoros até a pausa")
-            SliderCustom(timerValue: $numberOfPomodoroUntilStop, maxValue: 10, minValue: 4, title: "Pomodoros até a pausa")
+            SliderCustom(timerValue: $timeBetweenPomodoroValue, maxValue: 50, minValue: 15, posFix: "min", title: "Tempo de foco")
+            SliderCustom(timerValue: $shortRest, maxValue: 10, minValue: 4, posFix: "min", title: "Descanso curto")
         }
     }
 }

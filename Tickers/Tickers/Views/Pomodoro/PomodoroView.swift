@@ -21,7 +21,7 @@ struct PomodoroView: View {
     @State private var rotationAngle = 0.0
     @State private var offsetValue: CGFloat = 0.0
     @Binding var isPresenting: Bool
-    @State var isPresentingFoco: Bool = false
+    @State var isPresentingFocus: Bool = false
     @State var isPresentingSounds: Bool = false
     @State var isPresentingDefinition: Bool = false
     
@@ -86,11 +86,11 @@ struct PomodoroView: View {
                                     .font(customFontBotoes)
                                     .foregroundColor(.blue)
                             }.onTapGesture {
-                                isPresentingFoco = true
+                                isPresentingFocus = true
                             }
                             .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
-                            .fullScreenCover(isPresented: $isPresentingFoco) {
-                                FocoView(isPresentingFoco: $isPresentingFoco, viewModel: viewModel)
+                            .fullScreenCover(isPresented: $isPresentingFocus) {
+                                FocusView(isPresentingFocus: $isPresentingFocus, viewModel: viewModel)
                             }
                             
                             
@@ -107,7 +107,7 @@ struct PomodoroView: View {
                                 
                                 if #available(iOS 16.0, *) {
                                     DefinitionsView(isPresentingDefinition: $isPresentingDefinition)
-                                        .presentationDetents([.height(640)])
+                                        .presentationDetents([.height(320)])
                                 } else {
                                     DefinitionsView(isPresentingDefinition: $isPresentingDefinition)
                                 }

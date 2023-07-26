@@ -25,7 +25,7 @@ struct HomeView: View {
                         .font(.tickerFont(font: .bold, size: .extraLarge))
                     Spacer()
                     NavigationLink {
-                        TickerScreenView(viewModel: tickerViewModel)
+                        TickersView(viewModel: tickerViewModel)
                             .navigationBarBackButtonHidden(true)
                     } label: {
                         Text("Ver Tudo")
@@ -37,7 +37,7 @@ struct HomeView: View {
                 ScrollView(.horizontal){
                     LazyHGrid(rows: rows) {
                         ForEach(tickerViewModel.data) { ticker in
-                            CardView(ticker: ticker)
+                            CardView(ticker: ticker, homeFrame: true)
                                 .padding(.trailing, 10)
                         }
                     }
@@ -48,7 +48,7 @@ struct HomeView: View {
                         .font(.tickerFont(font: .bold, size: .extraLarge))
                     Spacer()
                     NavigationLink {
-                        AchievementScreenView(achievementViewModel: AchievementViewModel())
+                        AchievementsView(achievementViewModel: AchievementViewModel())
                             .navigationBarBackButtonHidden(true)
                     } label: {
                         Text("Ver Tudo")

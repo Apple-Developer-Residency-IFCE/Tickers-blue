@@ -1,5 +1,5 @@
 //
-//  TickerScreenView.swift
+//  TickersView.swift
 //  Tickers
 //
 //  Created by Ian Pacini on 30/06/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TickerScreenView: View {
+struct TickersView: View {
     @ObservedObject var viewModel: TickerViewModel
     
     let columns = [
@@ -38,8 +38,8 @@ struct TickerScreenView: View {
     }
 }
 
-struct TickerScreenView_Previews: PreviewProvider {
+struct TickersView_Previews: PreviewProvider {
     static var previews: some View {
-        TickerScreenView(viewModel: TickerViewModel())
+        TickersView(viewModel: TickerViewModel())
     }
 }
