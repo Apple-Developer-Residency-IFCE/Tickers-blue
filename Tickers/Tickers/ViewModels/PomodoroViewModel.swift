@@ -48,6 +48,7 @@ class PomodoroViewModel: ObservableObject {
     
     func timerComplete(restTime: inout Bool) {
         UserStatsManager.shared.addToPomodoroStreak()
+        TickerViewModel.shared.addEXP(xp: 15)
         setTimer()
     }
     
