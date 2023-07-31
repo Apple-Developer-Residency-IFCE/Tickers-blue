@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct DefinitionsView: View {
-    @State var pomodoroTimerValue: Float = 6
-    @State var timeBetweenPomodoroValue: Float = 25
+    @State var pomodoroTime: Float = PomodoroViewModel.shared.pomodoroTime
+    @State var restTime: Float = PomodoroViewModel.shared.restTimer
+    
+    
     let customFont = Font.tickerFont(font: .bold, size: .xxl)
-    @State var shortRest: Float = 6
-    @State var longRest: Float = 20
-    @State var numberOfPomodoroUntilStop: Float = 6
     @Binding var isPresentingDefinition: Bool
     
     var body: some View {
@@ -30,8 +29,13 @@ struct DefinitionsView: View {
                 
             }
             Divider()
-            SliderCustom(timerValue: $timeBetweenPomodoroValue, maxValue: 50, minValue: 15, posFix: "min", title: "Tempo de foco")
-            SliderCustom(timerValue: $shortRest, maxValue: 10, minValue: 4, posFix: "min", title: "Descanso curto")
+            SliderCustom(timerValue: $pomodoroTime, maxValue: 50, minValue: 15, posFix: "min", title: "Tempo de foco")
+            SliderCustom(timerValue: $restTime, maxValue: 10, minValue: 4, posFix: "min", title: "Descanso curto")
+        }.onDisappear(){
+            UserDefaults.standard.set(pomodoroTime, forKey: "pomodoroTime")
+            PomodoroViewModel.shared.pomodoroTime = self.pomodoroTime
+            UserDefaults.standard.set(restTime, forKey: "restTimer")
+            PomodoroViewModel.shared.restTimer = self.restTime
         }
     }
 }

@@ -76,6 +76,6 @@ struct AchievCardView: View {
 
 struct AchievCardView_Previews: PreviewProvider {
     static var previews: some View {
-        AchievCardView(achievement: Achievement(id: UUID(), isCompleted: true, title: "Hora do foco", description: "Concluiu seu primeiro pomodoro"))
+        AchievCardView(achievement: Achievement(id: UUID(), isCompleted: true, isHidden: false, title: "Hora do foco", description: "Concluiu seu primeiro pomodoro", completeXP: 10))
     }
 }

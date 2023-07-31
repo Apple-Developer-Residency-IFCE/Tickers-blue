@@ -16,13 +16,13 @@ struct AchievementsView: View {
                 Divider()
                 ScrollView{
                     LazyVGrid(columns: columns, alignment: .center) {
-                        ForEach(achievementViewModel.achievements.filter { achievement in return achievement.isCompleted }) { achievement in
+                        ForEach(achievementViewModel.achievements.filter { achievement in return achievement.isCompleted && !achievement.isHidden }) { achievement in
                             AchievementCellView(achievement: achievement)
                         }
                     }
                     .padding(.bottom, 15)
                     LazyVGrid(columns: columns, alignment: .center) {
-                        ForEach(achievementViewModel.achievements.filter { achievement in return !achievement.isCompleted }) { achievement in
+                        ForEach(achievementViewModel.achievements.filter { achievement in return !achievement.isCompleted && !achievement.isHidden }) { achievement in
                             AchievementCellView(achievement: achievement)
                         }
                     }
@@ -38,6 +38,6 @@ struct AchievementsView: View {
 
 struct MissionsView_Previews: PreviewProvider {
     static var previews: some View {
-        AchievementsView(achievementViewModel: AchievementViewModel())
+        AchievementsView(achievementViewModel: AchievementViewModel.shared)
     }
 }

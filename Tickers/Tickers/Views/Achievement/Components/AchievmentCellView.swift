@@ -82,7 +82,7 @@ struct AchievementCellView: View {
 
 struct AchievementCellView_Previews: PreviewProvider {
     static var previews: some View {
-        AchievementCellView(achievement: Achievement(id: UUID(), isCompleted: false, progressValues: [3, 10], title: "Primeira Vez", description: "Finalize o seu primeiro pomodoro do dia e ganhe 50 xp"))
+        AchievementCellView(achievement: Achievement(id: UUID(), isCompleted: false, isHidden: false, progressValues: [3, 10], title: "Primeira Vez", description: "Finalize o seu primeiro pomodoro do dia e ganhe 50 xp", completeXP: 10))
     }
 }
             

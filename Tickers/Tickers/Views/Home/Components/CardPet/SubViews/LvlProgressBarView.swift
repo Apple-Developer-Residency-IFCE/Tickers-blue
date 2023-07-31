@@ -20,7 +20,7 @@ struct LvlProgressBarView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: 18)
-            ProgressView(value: Double(actualProgress), total: Double(maxProgress))
+            ProgressView(value: max(0, Double(actualProgress)), total: Double(maxProgress))
                 .frame(width: 68, height: 8.0)
                 .scaleEffect(x:1, y: 2.5, anchor: .center)
                 .clipShape(RoundedRectangle(cornerRadius: 10))

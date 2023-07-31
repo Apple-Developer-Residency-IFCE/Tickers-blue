@@ -52,9 +52,12 @@
 		DDED2CA72A6B319A0057FB2C /* TickerDB+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED2CA52A6B319A0057FB2C /* TickerDB+CoreDataProperties.swift */; };
 		DDED2CA92A6B31B50057FB2C /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDED2CA82A6B31B50057FB2C /* DataController.swift */; };
 		DDF8D9C02A4F8B2800FDAC81 /* TickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF8D9BF2A4F8B2800FDAC81 /* TickersView.swift */; };
-		DDFCC00D2A6F45AA0071EF63 /* AchievementsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCC00C2A6F45AA0071EF63 /* AchievementsManager.swift */; };
+		DDFCC00D2A6F45AA0071EF63 /* UserStatsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCC00C2A6F45AA0071EF63 /* UserStatsManager.swift */; };
 		DDFCC0102A6F4A840071EF63 /* UserStats+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCC00E2A6F4A840071EF63 /* UserStats+CoreDataClass.swift */; };
 		DDFCC0112A6F4A840071EF63 /* UserStats+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCC00F2A6F4A840071EF63 /* UserStats+CoreDataProperties.swift */; };
+		DDFCC0202A7098800071EF63 /* AchievementDB+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCC01E2A7098800071EF63 /* AchievementDB+CoreDataClass.swift */; };
+		DDFCC0212A7098800071EF63 /* AchievementDB+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCC01F2A7098800071EF63 /* AchievementDB+CoreDataProperties.swift */; };
+		DDFCC0252A74800F0071EF63 /* BackgroundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCC0242A74800F0071EF63 /* BackgroundHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,9 +127,12 @@
 		DDED2CA52A6B319A0057FB2C /* TickerDB+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TickerDB+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DDED2CA82A6B31B50057FB2C /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		DDF8D9BF2A4F8B2800FDAC81 /* TickersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersView.swift; sourceTree = "<group>"; };
-		DDFCC00C2A6F45AA0071EF63 /* AchievementsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsManager.swift; sourceTree = "<group>"; };
+		DDFCC00C2A6F45AA0071EF63 /* UserStatsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatsManager.swift; sourceTree = "<group>"; };
 		DDFCC00E2A6F4A840071EF63 /* UserStats+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserStats+CoreDataClass.swift"; path = "Tickers/Models/UserStats+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DDFCC00F2A6F4A840071EF63 /* UserStats+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UserStats+CoreDataProperties.swift"; path = "Tickers/Models/UserStats+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DDFCC01E2A7098800071EF63 /* AchievementDB+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AchievementDB+CoreDataClass.swift"; path = "Tickers/Models/AchievementDB+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DDFCC01F2A7098800071EF63 /* AchievementDB+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AchievementDB+CoreDataProperties.swift"; path = "Tickers/Models/AchievementDB+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DDFCC0242A74800F0071EF63 /* BackgroundHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,8 +254,9 @@
 				3441CC172A3D10AC004A2D4C /* TickerModel.swift */,
 				34626C962A31335B004737E7 /* AchievementModel.swift */,
 				DD0738572A4FACD300D681E1 /* SoundModel.swift */,
-				DDFCC00C2A6F45AA0071EF63 /* AchievementsManager.swift */,
+				DDFCC00C2A6F45AA0071EF63 /* UserStatsManager.swift */,
 				DDED2CA82A6B31B50057FB2C /* DataController.swift */,
+				DDFCC0242A74800F0071EF63 /* BackgroundHelper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -266,6 +273,8 @@
 		642697E82A1D797700A7C788 = {
 			isa = PBXGroup;
 			children = (
+				DDFCC01E2A7098800071EF63 /* AchievementDB+CoreDataClass.swift */,
+				DDFCC01F2A7098800071EF63 /* AchievementDB+CoreDataProperties.swift */,
 				DDFCC00E2A6F4A840071EF63 /* UserStats+CoreDataClass.swift */,
 				DDFCC00F2A6F4A840071EF63 /* UserStats+CoreDataProperties.swift */,
 				DDED2CA42A6B319A0057FB2C /* TickerDB+CoreDataClass.swift */,
@@ -605,7 +614,7 @@
 				345E23952A30054000AEF1CB /* TextFieldView.swift in Sources */,
 				642697F52A1D797700A7C788 /* TickersApp.swift in Sources */,
 				64D0A79A2A27FEA40074EF28 /* EggCardView.swift in Sources */,
-				DDFCC00D2A6F45AA0071EF63 /* AchievementsManager.swift in Sources */,
+				DDFCC00D2A6F45AA0071EF63 /* UserStatsManager.swift in Sources */,
 				DD0738582A4FACD300D681E1 /* SoundModel.swift in Sources */,
 				DDFCC0112A6F4A840071EF63 /* UserStats+CoreDataProperties.swift in Sources */,
 				64D0A7982A27FA860074EF28 /* CardView.swift in Sources */,
@@ -619,16 +628,19 @@
 				DDED2CA62A6B319A0057FB2C /* TickerDB+CoreDataClass.swift in Sources */,
 				3455BC432A3A75C7004A430A /* navigationViewModifier.swift in Sources */,
 				345E23A32A3006E700AEF1CB /* PerfilView.swift in Sources */,
+				DDFCC0202A7098800071EF63 /* AchievementDB+CoreDataClass.swift in Sources */,
 				3441CC1A2A3D3003004A2D4C /* TickerViewModel.swift in Sources */,
 				6427D6E62A2560C700F66288 /* SoundScreenView.swift in Sources */,
 				34626C972A31335B004737E7 /* AchievementModel.swift in Sources */,
 				6492E9B62A202A7600F608BB /* TickerFont.swift in Sources */,
 				34626C992A31337D004737E7 /* NavigationBar.swift in Sources */,
+				DDFCC0252A74800F0071EF63 /* BackgroundHelper.swift in Sources */,
 				C867C47C2A4123BC0035D757 /* AchievementScreenView.swift in Sources */,
 				642697F52A1D797700A7C788 /* TickersApp.swift in Sources */,
 				35B5C9D02A4CE6430088DF6F /* AchievCardView.swift in Sources */,
 				345E23A82A30071400AEF1CB /* PomodoroView.swift in Sources */,
 				345E236E2A2FE15A00AEF1CB /* CircularProgressView.swift in Sources */,
+				DDFCC0212A7098800071EF63 /* AchievementDB+CoreDataProperties.swift in Sources */,
 				646E1B872A280A64004B4583 /* ButtonReturn.swift in Sources */,
 				345E236F2A2FE15A00AEF1CB /* StopWatchView.swift in Sources */,
 				C867C47E2A4254310035D757 /* AchievementViewModel.swift in Sources */,

@@ -66,7 +66,7 @@ struct TabBarView: View {
                             isPresenting = true //aparecer pomodoro
                         }
                         .fullScreenCover(isPresented: $isPresenting) {
-                            PomodoroView(viewModel: PomodoroViewModel(), isPresenting: $isPresenting)
+                            PomodoroView(isPresenting: $isPresenting)
                         }
                     perfil
                         .tabItem {
@@ -105,6 +105,6 @@ struct TabBarView: View {
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView(home: HomeView(tickerViewModel: TickerViewModel(), achievementViewModel: AchievementViewModel()), perfil: PerfilView())
+        TabBarView(home: HomeView(tickerViewModel: TickerViewModel.shared, achievementViewModel: AchievementViewModel()), perfil: PerfilView())
     }
 }

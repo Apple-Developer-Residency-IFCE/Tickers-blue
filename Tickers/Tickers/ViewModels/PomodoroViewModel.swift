@@ -15,6 +15,8 @@ enum PomodoroState {
 
 
 class PomodoroViewModel: ObservableObject {
+    static var shared = PomodoroViewModel()
+    
     var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     //TODO:: Refazer a lógica do timner
@@ -25,7 +27,16 @@ class PomodoroViewModel: ObservableObject {
     @Published var isTimerRunning: Bool = false
     @Published var currentState: PomodoroState = .work
     @Published var isBreakTimeStarted = false
-    @Published var timeRemaining = 25 * 60
+    @Published var didTimerEnd = false
+    
+    @Published var timeRemaining: Int = 25 * 60
+
+    init() {
+        setTimer()
+    }
+    
+    var pomodoroTime = UserDefaults.standard.float(forKey: "pomodoroTime")
+    var restTimer = UserDefaults.standard.float(forKey: "restTimer")
     
     func minutes() -> String{
         return String(format: "%02d", self.timeRemaining/60)
@@ -36,24 +47,22 @@ class PomodoroViewModel: ObservableObject {
     }
     
     func timerComplete(restTime: inout Bool) {
-        if currentState == .work {
-            currentState = .breakTime
-            timeRemaining = 5 * 60
-            isBreakTimeStarted = true
-            restTime = true
-        } else if currentState == .breakTime {
-            currentState = .work
-            timeRemaining = 25 * 60
-            isBreakTimeStarted = false
-            restTime = false
-        }
+        UserStatsManager.shared.addToPomodoroStreak()
+        setTimer()
+    }
+    
+    func setTimer() {
+        timeRemaining = Int(pomodoroTime) * 60
+        
+        pomodoroTime = UserDefaults.standard.float(forKey: "pomodoroTime")
+        restTimer = UserDefaults.standard.float(forKey: "restTimer")
     }
     
     func runTimer(restTime: inout Bool){
         
         if isTimerRunning && timeRemaining > 0 {
             timeRemaining -= 1
-            AchievementsManager.shared.addTime()
+            UserStatsManager.shared.addTime()
             if timeRemaining <= 0 {
                 timerComplete(restTime: &restTime)
             }
@@ -62,7 +71,7 @@ class PomodoroViewModel: ObservableObject {
     
     func resetTimer(restTime: inout Bool) {
         currentState = .work
-        timeRemaining = 25 * 60
+        timeRemaining = Int(pomodoroTime * 60)
         isBreakTimeStarted = false
         restTime = false
     }
@@ -70,10 +79,14 @@ class PomodoroViewModel: ObservableObject {
     func startTimer(restTime: inout Bool) {
         if timeRemaining <= 0 {
             timerComplete(restTime: &restTime)
+                
+            resetTimer(restTime: &restTime)
         } else {
             currentState = .work
             isTimerRunning = true
         }
+        
+        didTimerEnd = false
     }
     
     func stopTimer() {
@@ -84,18 +97,33 @@ class PomodoroViewModel: ObservableObject {
     }
     
     func skipBreak(restTime: inout Bool) {
-        if currentState == .breakTime {
-            currentState = .work
-            timeRemaining = 25 * 60
-            isBreakTimeStarted = false
-            restTime = false
-            isTimerRunning = true
-        } else if currentState == .work && !isBreakTimeStarted {
-            currentState = .breakTime
-            timeRemaining = 5 * 60
+        if currentState == .work {
             isBreakTimeStarted = true
+            currentState = .breakTime
+            timeRemaining = Int(restTimer * 60)
             restTime = true
             isTimerRunning = true
+        } else if currentState == .breakTime {
+            timeRemaining = 0
+            restTime = false
+            isTimerRunning = false
         }
+        
+        // esse codigo funcionava quando havia mais de 1 pomodoro em seguida
+//        if currentState == .breakTime {
+//            currentState = .work
+//            timeRemaining = 25 * 60
+//            isBreakTimeStarted = false
+//            restTime = false
+//            isTimerRunning = true
+//        } else if currentState == .work && !isBreakTimeStarted {
+//            currentState = .breakTime
+//            timeRemaining = 1 * 60
+//            isBreakTimeStarted = true
+//            restTime = true
+//            isTimerRunning = true
+//        }
+        
+        
     }
 }

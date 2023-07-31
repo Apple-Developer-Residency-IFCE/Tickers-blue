@@ -2,7 +2,7 @@ import SwiftUI
 import Combine
 
 struct StopWatchView: View {
-    @ObservedObject var viewModel: PomodoroViewModel
+    @ObservedObject var viewModel = PomodoroViewModel.shared
     @Binding var restTime: Bool
     
     var body: some View {
@@ -62,7 +62,11 @@ struct StopWatchView: View {
     }
     
     var progress: Double {
-        Double(viewModel.timeRemaining) / Double(25 * 60)
+        if viewModel.isBreakTimeStarted {
+           return Double(viewModel.timeRemaining) / Double(viewModel.restTimer * 60)
+        } else {
+           return Double(viewModel.timeRemaining) / Double(viewModel.pomodoroTime * 60)
+        }
     }
 }
 
@@ -70,6 +74,6 @@ struct StopWatchView: View {
 
 struct StopWatchView_Previews: PreviewProvider {
     static var previews: some View {
-        StopWatchView(viewModel: PomodoroViewModel(), restTime: .constant(true))
+        StopWatchView(restTime: .constant(true))
     }
 }

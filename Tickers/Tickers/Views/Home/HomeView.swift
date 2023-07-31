@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var tickerViewModel: TickerViewModel
-    @ObservedObject var achievementViewModel: AchievementViewModel
+    @ObservedObject var tickerViewModel: TickerViewModel = TickerViewModel.shared
+    @ObservedObject var achievementViewModel: AchievementViewModel = AchievementViewModel.shared
     
     let rows = [
         GridItem(.fixed(176))
@@ -40,7 +40,6 @@ struct HomeView: View {
                             CardView(ticker: ticker, homeFrame: true)
                                 .onTapGesture {
                                     tickerViewModel.selectTicker(id: ticker.id)
-                                    AchievementsManager.shared.addTime()
                                 }
                                 .padding(.horizontal, 5)
                         }
@@ -53,7 +52,7 @@ struct HomeView: View {
                         .font(.tickerFont(font: .bold, size: .extraLarge))
                     Spacer()
                     NavigationLink {
-                        AchievementsView(achievementViewModel: AchievementViewModel())
+                        AchievementsView(achievementViewModel: achievementViewModel)
                             .navigationBarBackButtonHidden(true)
                     } label: {
                         Text("Ver Tudo")
@@ -63,10 +62,19 @@ struct HomeView: View {
                 }
                 .padding(.bottom, 30)
                 ScrollView(.horizontal){
-                    LazyHGrid(rows: rows) {
-                        ForEach(achievementViewModel.achievements) { achievement in
-                            AchievCardView(achievement: achievement)
-                                .padding(.trailing, 10)
+                    HStack{
+                        LazyHGrid(rows: rows) {
+                            ForEach(achievementViewModel.achievements.filter { achievement in return achievement.isCompleted && !achievement.isHidden }) { achievement in
+                                AchievCardView(achievement: achievement)
+                                    .padding(.trailing, 10)
+                            }
+                        }
+                        LazyHGrid(rows: rows) {
+                            ForEach(achievementViewModel.achievements.filter { achievement in return !achievement.isCompleted && !achievement.isHidden }) { achievement in
+                                AchievCardView(achievement: achievement)
+                                    .padding(.trailing, 10)
+                            }
+                            
                         }
                     }
                 }
@@ -79,12 +87,20 @@ struct HomeView: View {
                     .padding(.bottom, 10)
             }.padding(.top, 10)
         }
+        .onAppear(){
+            tickerViewModel.updateData()
+        }
     }
 }
 
 struct HomeTabBar: View {
+    
+    @StateObject var pomodoroViewModel = PomodoroViewModel.shared
+    
+    
     var body: some View {
-        TabBarView(home: HomeView(tickerViewModel: TickerViewModel(), achievementViewModel: AchievementViewModel()), perfil: PerfilView())
+        TabBarView(home: HomeView(), perfil: PerfilView())
+            .environmentObject(pomodoroViewModel)
     }
 }
 

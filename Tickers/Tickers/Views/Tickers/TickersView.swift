@@ -27,6 +27,10 @@ struct TickersView: View {
                     LazyVGrid(columns: columns, alignment: .center) {
                         ForEach(viewModel.data, id: \.id) { item in
                             CardView(ticker: item).padding(.top, 10)
+                                .onTapGesture {
+                                    TickerViewModel.shared.selectTicker(id: item.id)
+                                }
+                            .padding(.horizontal, 5)
                         }
                     }.padding(.horizontal)
                 }.frame(minWidth: 440)
@@ -40,6 +44,6 @@ struct TickersView: View {
 
 struct TickersView_Previews: PreviewProvider {
     static var previews: some View {
-        TickersView(viewModel: TickerViewModel())
+        TickersView(viewModel: TickerViewModel.shared)
     }
 }

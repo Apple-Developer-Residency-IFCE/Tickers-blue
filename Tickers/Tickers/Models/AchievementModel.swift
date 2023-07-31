@@ -7,11 +7,13 @@
 
 import SwiftUI
 
-struct Achievement: Identifiable{
+struct Achievement: Identifiable, Equatable{
     let id: UUID
     var isCompleted: Bool
+    var isHidden: Bool
     var progressValues: [Int]?
     var title: String
     var description: String
+    var completeXP: Int
 }
 
